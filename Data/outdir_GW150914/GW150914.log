@@ -1,0 +1,985 @@
+13:28 INFO    : Starting GW150914
+13:28 INFO    : Downloading analysis data for ifo H1
+13:28 INFO    : Downloading psd data for ifo H1
+13:29 INFO    : Downloading analysis data for ifo L1
+13:29 INFO    : Downloading psd data for ifo L1
+13:29 INFO    : Saving data plots to GWTC-1-confident_marg2/outdir_GW150914
+13:29 INFO    : Waveform generator instantiated: WaveformGenerator(duration=None, sampling_frequency=None, start_time=0, frequency_domain_source_model=bilby.gw.source.lal_binary_black_hole, time_domain_source_model=None, parameter_conversion=bilby.gw.conversion.convert_to_lal_binary_black_hole_parameters, waveform_arguments={'waveform_approximant': 'IMRPhenomPv2', 'reference_frequency': 50})
+13:29 INFO    : Loaded distance marginalisation lookup table from .distance_marginalization_lookup.npz.
+13:29 INFO    : Running for label 'GW150914', output will be saved to 'GWTC-1-confident_marg2/outdir_GW150914'
+13:29 INFO    : Using lal version 7.7.0
+13:29 INFO    : Using lal git version Branch: None;Tag: lalsuite-v7.26.1;Id: c90e1175f5e238741185744a4e516e58d42a9aec;;Builder: Unknown User <>;Repository status: CLEAN: All modifications committed
+13:29 INFO    : Using lalsimulation version 6.2.0
+13:29 INFO    : Using lalsimulation git version Branch: None;Tag: lalsuite-v7.26.1;Id: c90e1175f5e238741185744a4e516e58d42a9aec;;Builder: Unknown User <>;Repository status: CLEAN: All modifications committed
+13:29 INFO    : Analysis priors:
+13:29 INFO    : chirp_mass=bilby.gw.prior.UniformInComponentsChirpMass(minimum=1, maximum=130, name='chirp_mass', latex_label='$\\mathcal{M}$', unit='$M_{\\odot}$', boundary=None)
+13:29 INFO    : mass_ratio=bilby.gw.prior.UniformInComponentsMassRatio(minimum=0.125, maximum=1, name='mass_ratio', latex_label='$q$', unit=None, boundary=None, equal_mass=False)
+13:29 INFO    : a_1=Uniform(minimum=0, maximum=0.99, name='a_1', latex_label='$a_1$', unit=None, boundary=None)
+13:29 INFO    : a_2=Uniform(minimum=0, maximum=0.99, name='a_2', latex_label='$a_2$', unit=None, boundary=None)
+13:29 INFO    : tilt_1=Sine(minimum=0, maximum=3.141592653589793, name='tilt_1', latex_label='$\\theta_1$', unit=None, boundary=None)
+13:29 INFO    : tilt_2=Sine(minimum=0, maximum=3.141592653589793, name='tilt_2', latex_label='$\\theta_2$', unit=None, boundary=None)
+13:29 INFO    : phi_12=Uniform(minimum=0, maximum=6.283185307179586, name='phi_12', latex_label='$\\Delta\\phi$', unit=None, boundary='periodic')
+13:29 INFO    : phi_jl=Uniform(minimum=0, maximum=6.283185307179586, name='phi_jl', latex_label='$\\phi_{JL}$', unit=None, boundary='periodic')
+13:29 INFO    : dec=Cosine(minimum=-1.5707963267948966, maximum=1.5707963267948966, name='dec', latex_label='$\\mathrm{DEC}$', unit=None, boundary=None)
+13:29 INFO    : ra=Uniform(minimum=0, maximum=6.283185307179586, name='ra', latex_label='$\\mathrm{RA}$', unit=None, boundary='periodic')
+13:29 INFO    : theta_jn=Sine(minimum=0, maximum=3.141592653589793, name='theta_jn', latex_label='$\\theta_{JN}$', unit=None, boundary=None)
+13:29 INFO    : psi=Uniform(minimum=0, maximum=3.141592653589793, name='psi', latex_label='$\\psi$', unit=None, boundary='periodic')
+13:29 INFO    : phase=Uniform(minimum=0, maximum=6.283185307179586, name='phase', latex_label='$\\phi$', unit=None, boundary='periodic')
+13:29 INFO    : geocent_time=Uniform(minimum=1126259462.3000002, maximum=1126259462.5, name='geocent_time', latex_label='$t_c$', unit=None, boundary=None)
+13:29 INFO    : mass_1=Constraint(minimum=1, maximum=150, name='mass_1', latex_label='$m_1$', unit=None)
+13:29 INFO    : mass_2=Constraint(minimum=1, maximum=150, name='mass_2', latex_label='$m_2$', unit=None)
+13:29 INFO    : luminosity_distance=11905.507890937342
+13:29 INFO    : Analysis likelihood class: <class 'bilby.gw.likelihood.base.GravitationalWaveTransient'>
+13:29 INFO    : Analysis likelihood noise evidence: -5240.792491070582
+13:29 INFO    : Single likelihood evaluation took 1.995e-03 s
+13:29 INFO    : Using sampler Dynesty with kwargs {'nlive': 2000, 'bound': 'live', 'sample': 'acceptance-walk', 'periodic': None, 'reflective': None, 'update_interval': 600, 'first_update': None, 'rstate': None, 'queue_size': 48, 'pool': None, 'use_pool': None, 'live_points': None, 'logl_args': None, 'logl_kwargs': None, 'ptform_args': None, 'ptform_kwargs': None, 'enlarge': None, 'bootstrap': None, 'walks': 100, 'facc': 0.2, 'slices': None, 'ncdim': None, 'blob': False, 'save_evaluation_history': False, 'history_filename': None, 'maxiter': None, 'maxcall': None, 'dlogz': 0.1, 'logl_max': inf, 'add_live': True, 'print_progress': True, 'print_func': <bound method Dynesty._print_func of <bilby.core.sampler.dynesty.Dynesty object at 0x7ffee4c78bd0>>, 'save_bounds': False, 'checkpoint_file': None, 'checkpoint_every': 60, 'resume': False, 'seed': None}
+13:30 INFO    : Global meta data was removed from the result object for compatibility. Use the `BILBY_INCLUDE_GLOBAL_METADATA` environment variable to include it. This behaviour will be removed in a future release. For more details see: https://bilby-dev.github.io/bilby/faq.html#global-meta-data
+13:30 INFO    : Checkpoint every check_point_delta_t = 600s
+13:30 INFO    : Using dynesty version 3.0.0
+13:30 INFO    : Setting up multiproccesing pool with 48 processes
+13:30 INFO    : Resume file GWTC-1-confident_marg2/outdir_GW150914/GW150914_resume.pickle does not exist.
+13:30 INFO    : Generating initial points from the prior
+13:30 INFO    : Using the bilby-implemented ensemble rwalk sampling method with an average of 60 accepted steps up to chain length 5000.
+13:40 INFO    : Written checkpoint file GWTC-1-confident_marg2/outdir_GW150914/GW150914_resume.pickle
+13:51 INFO    : Written checkpoint file GWTC-1-confident_marg2/outdir_GW150914/GW150914_resume.pickle
+14:01 INFO    : Written checkpoint file GWTC-1-confident_marg2/outdir_GW150914/GW150914_resume.pickle
+14:12 INFO    : Written checkpoint file GWTC-1-confident_marg2/outdir_GW150914/GW150914_resume.pickle
+14:23 INFO    : Written checkpoint file GWTC-1-confident_marg2/outdir_GW150914/GW150914_resume.pickle
+14:34 INFO    : Written checkpoint file GWTC-1-confident_marg2/outdir_GW150914/GW150914_resume.pickle
+14:45 INFO    : Written checkpoint file GWTC-1-confident_marg2/outdir_GW150914/GW150914_resume.pickle
+14:57 INFO    : Written checkpoint file GWTC-1-confident_marg2/outdir_GW150914/GW150914_resume.pickle
+15:03 INFO    : Written checkpoint file GWTC-1-confident_marg2/outdir_GW150914/GW150914_resume.pickle
+15:04 INFO    : Starting to close worker pool.
+15:04 INFO    : Finished closing worker pool.
+15:04 INFO    : Rejection sampling nested samples to obtain 9884 posterior samples
+15:04 INFO    : Sampling time: 1:34:03.731518
+15:04 WARNING : Result.save_to_file called with extension=True. This will default to json, and ignore the extension from the filename. This behaviour is deprecated and will be removed. 
+15:04 INFO    : Computing per-detector log likelihoods.
+15:04 INFO    : Using a pool with size 48 for nsamples=9884
+15:04 INFO    : Reconstructing marginalised parameters.
+15:04 INFO    : Using a pool with size 48 for nsamples=9884
+15:04 INFO    : Computing SNRs for every sample.
+15:04 INFO    : Using a pool with size 48 for nsamples=9884
+15:05 WARNING : Result.save_to_file called with extension=True. This will default to json, and ignore the extension from the filename. This behaviour is deprecated and will be removed. 
+15:05 INFO    : Summary of results:
+nsamples: 9884
+ln_noise_evidence: -5240.792
+ln_evidence: -4982.837 +/-  0.136
+ln_bayes_factor: 257.956 +/-  0.136
+
+15:05 INFO    : Starting GW151012
+15:05 INFO    : Downloading analysis data for ifo H1
+15:05 INFO    : Downloading psd data for ifo H1
+15:05 INFO    : Downloading analysis data for ifo L1
+15:05 INFO    : Downloading psd data for ifo L1
+15:05 INFO    : Saving data plots to GWTC-1-confident_marg2/outdir_GW151012
+15:05 INFO    : Waveform generator instantiated: WaveformGenerator(duration=None, sampling_frequency=None, start_time=0, frequency_domain_source_model=bilby.gw.source.lal_binary_black_hole, time_domain_source_model=None, parameter_conversion=bilby.gw.conversion.convert_to_lal_binary_black_hole_parameters, waveform_arguments={'waveform_approximant': 'IMRPhenomPv2', 'reference_frequency': 50})
+15:05 INFO    : Loaded distance marginalisation lookup table from .distance_marginalization_lookup.npz.
+15:05 INFO    : Running for label 'GW151012', output will be saved to 'GWTC-1-confident_marg2/outdir_GW151012'
+15:05 INFO    : Using lal version 7.7.0
+15:05 INFO    : Using lal git version Branch: None;Tag: lalsuite-v7.26.1;Id: c90e1175f5e238741185744a4e516e58d42a9aec;;Builder: Unknown User <>;Repository status: CLEAN: All modifications committed
+15:05 INFO    : Using lalsimulation version 6.2.0
+15:05 INFO    : Using lalsimulation git version Branch: None;Tag: lalsuite-v7.26.1;Id: c90e1175f5e238741185744a4e516e58d42a9aec;;Builder: Unknown User <>;Repository status: CLEAN: All modifications committed
+15:05 INFO    : Analysis priors:
+15:05 INFO    : chirp_mass=bilby.gw.prior.UniformInComponentsChirpMass(minimum=1, maximum=130, name='chirp_mass', latex_label='$\\mathcal{M}$', unit='$M_{\\odot}$', boundary=None)
+15:05 INFO    : mass_ratio=bilby.gw.prior.UniformInComponentsMassRatio(minimum=0.125, maximum=1, name='mass_ratio', latex_label='$q$', unit=None, boundary=None, equal_mass=False)
+15:05 INFO    : a_1=Uniform(minimum=0, maximum=0.99, name='a_1', latex_label='$a_1$', unit=None, boundary=None)
+15:05 INFO    : a_2=Uniform(minimum=0, maximum=0.99, name='a_2', latex_label='$a_2$', unit=None, boundary=None)
+15:05 INFO    : tilt_1=Sine(minimum=0, maximum=3.141592653589793, name='tilt_1', latex_label='$\\theta_1$', unit=None, boundary=None)
+15:05 INFO    : tilt_2=Sine(minimum=0, maximum=3.141592653589793, name='tilt_2', latex_label='$\\theta_2$', unit=None, boundary=None)
+15:05 INFO    : phi_12=Uniform(minimum=0, maximum=6.283185307179586, name='phi_12', latex_label='$\\Delta\\phi$', unit=None, boundary='periodic')
+15:05 INFO    : phi_jl=Uniform(minimum=0, maximum=6.283185307179586, name='phi_jl', latex_label='$\\phi_{JL}$', unit=None, boundary='periodic')
+15:05 INFO    : dec=Cosine(minimum=-1.5707963267948966, maximum=1.5707963267948966, name='dec', latex_label='$\\mathrm{DEC}$', unit=None, boundary=None)
+15:05 INFO    : ra=Uniform(minimum=0, maximum=6.283185307179586, name='ra', latex_label='$\\mathrm{RA}$', unit=None, boundary='periodic')
+15:05 INFO    : theta_jn=Sine(minimum=0, maximum=3.141592653589793, name='theta_jn', latex_label='$\\theta_{JN}$', unit=None, boundary=None)
+15:05 INFO    : psi=Uniform(minimum=0, maximum=3.141592653589793, name='psi', latex_label='$\\psi$', unit=None, boundary='periodic')
+15:05 INFO    : phase=Uniform(minimum=0, maximum=6.283185307179586, name='phase', latex_label='$\\phi$', unit=None, boundary='periodic')
+15:05 INFO    : geocent_time=Uniform(minimum=1128678900.3000002, maximum=1128678900.5, name='geocent_time', latex_label='$t_c$', unit=None, boundary=None)
+15:05 INFO    : mass_1=Constraint(minimum=1, maximum=150, name='mass_1', latex_label='$m_1$', unit=None)
+15:05 INFO    : mass_2=Constraint(minimum=1, maximum=150, name='mass_2', latex_label='$m_2$', unit=None)
+15:05 INFO    : luminosity_distance=11905.507890937342
+15:05 INFO    : Analysis likelihood class: <class 'bilby.gw.likelihood.base.GravitationalWaveTransient'>
+15:05 INFO    : Analysis likelihood noise evidence: -4902.92484927292
+15:05 INFO    : Single likelihood evaluation took 1.991e-03 s
+15:05 INFO    : Using sampler Dynesty with kwargs {'nlive': 2000, 'bound': 'live', 'sample': 'acceptance-walk', 'periodic': None, 'reflective': None, 'update_interval': 600, 'first_update': None, 'rstate': None, 'queue_size': 48, 'pool': None, 'use_pool': None, 'live_points': None, 'logl_args': None, 'logl_kwargs': None, 'ptform_args': None, 'ptform_kwargs': None, 'enlarge': None, 'bootstrap': None, 'walks': 100, 'facc': 0.2, 'slices': None, 'ncdim': None, 'blob': False, 'save_evaluation_history': False, 'history_filename': None, 'maxiter': None, 'maxcall': None, 'dlogz': 0.1, 'logl_max': inf, 'add_live': True, 'print_progress': True, 'print_func': <bound method Dynesty._print_func of <bilby.core.sampler.dynesty.Dynesty object at 0x7fff85242750>>, 'save_bounds': False, 'checkpoint_file': None, 'checkpoint_every': 60, 'resume': False, 'seed': None}
+15:05 INFO    : Global meta data was removed from the result object for compatibility. Use the `BILBY_INCLUDE_GLOBAL_METADATA` environment variable to include it. This behaviour will be removed in a future release. For more details see: https://bilby-dev.github.io/bilby/faq.html#global-meta-data
+15:05 INFO    : Checkpoint every check_point_delta_t = 600s
+15:05 INFO    : Using dynesty version 3.0.0
+15:05 INFO    : Setting up multiproccesing pool with 48 processes
+15:05 INFO    : Resume file GWTC-1-confident_marg2/outdir_GW151012/GW151012_resume.pickle does not exist.
+15:05 INFO    : Generating initial points from the prior
+15:05 INFO    : Using the bilby-implemented ensemble rwalk sampling method with an average of 60 accepted steps up to chain length 5000.
+15:16 INFO    : Written checkpoint file GWTC-1-confident_marg2/outdir_GW151012/GW151012_resume.pickle
+15:26 INFO    : Written checkpoint file GWTC-1-confident_marg2/outdir_GW151012/GW151012_resume.pickle
+15:37 INFO    : Written checkpoint file GWTC-1-confident_marg2/outdir_GW151012/GW151012_resume.pickle
+15:48 INFO    : Written checkpoint file GWTC-1-confident_marg2/outdir_GW151012/GW151012_resume.pickle
+15:58 INFO    : Written checkpoint file GWTC-1-confident_marg2/outdir_GW151012/GW151012_resume.pickle
+16:10 INFO    : Written checkpoint file GWTC-1-confident_marg2/outdir_GW151012/GW151012_resume.pickle
+16:18 INFO    : Written checkpoint file GWTC-1-confident_marg2/outdir_GW151012/GW151012_resume.pickle
+16:19 INFO    : Starting to close worker pool.
+16:19 INFO    : Finished closing worker pool.
+16:19 INFO    : Rejection sampling nested samples to obtain 10877 posterior samples
+16:19 INFO    : Sampling time: 1:13:33.588398
+16:19 WARNING : Result.save_to_file called with extension=True. This will default to json, and ignore the extension from the filename. This behaviour is deprecated and will be removed. 
+16:19 INFO    : Computing per-detector log likelihoods.
+16:19 INFO    : Using a pool with size 48 for nsamples=10877
+16:19 INFO    : Reconstructing marginalised parameters.
+16:19 INFO    : Using a pool with size 48 for nsamples=10877
+16:20 INFO    : Computing SNRs for every sample.
+16:20 INFO    : Using a pool with size 48 for nsamples=10877
+16:20 WARNING : Result.save_to_file called with extension=True. This will default to json, and ignore the extension from the filename. This behaviour is deprecated and will be removed. 
+16:21 INFO    : Summary of results:
+nsamples: 10877
+ln_noise_evidence: -4902.925
+ln_evidence: -4884.839 +/-  0.125
+ln_bayes_factor: 18.086 +/-  0.125
+
+16:21 INFO    : Starting GW151226
+16:21 INFO    : Downloading analysis data for ifo H1
+16:21 INFO    : Downloading psd data for ifo H1
+16:21 INFO    : psd data contains NaN, reducing psd length
+16:21 INFO    : Downloading psd data for ifo H1
+16:21 INFO    : psd data contains NaN, reducing psd length
+16:21 INFO    : Downloading psd data for ifo H1
+16:21 INFO    : psd data contains NaN, reducing psd length
+16:21 INFO    : Downloading psd data for ifo H1
+16:21 INFO    : psd data contains NaN, reducing psd length
+16:21 INFO    : Downloading psd data for ifo H1
+16:21 INFO    : psd data contains NaN, reducing psd length
+16:21 INFO    : Downloading psd data for ifo H1
+16:21 INFO    : psd data contains NaN, reducing psd length
+16:21 INFO    : Downloading psd data for ifo H1
+16:22 INFO    : psd data contains NaN, reducing psd length
+16:22 INFO    : Downloading psd data for ifo H1
+16:22 INFO    : psd data contains NaN, reducing psd length
+16:22 INFO    : Downloading psd data for ifo H1
+16:22 INFO    : Downloading analysis data for ifo L1
+16:22 INFO    : Downloading psd data for ifo L1
+16:22 INFO    : Saving data plots to GWTC-1-confident_marg2/outdir_GW151226
+16:22 INFO    : Waveform generator instantiated: WaveformGenerator(duration=None, sampling_frequency=None, start_time=0, frequency_domain_source_model=bilby.gw.source.lal_binary_black_hole, time_domain_source_model=None, parameter_conversion=bilby.gw.conversion.convert_to_lal_binary_black_hole_parameters, waveform_arguments={'waveform_approximant': 'IMRPhenomPv2', 'reference_frequency': 50})
+16:22 INFO    : Loaded distance marginalisation lookup table from .distance_marginalization_lookup.npz.
+16:22 INFO    : Running for label 'GW151226', output will be saved to 'GWTC-1-confident_marg2/outdir_GW151226'
+16:22 INFO    : Using lal version 7.7.0
+16:22 INFO    : Using lal git version Branch: None;Tag: lalsuite-v7.26.1;Id: c90e1175f5e238741185744a4e516e58d42a9aec;;Builder: Unknown User <>;Repository status: CLEAN: All modifications committed
+16:22 INFO    : Using lalsimulation version 6.2.0
+16:22 INFO    : Using lalsimulation git version Branch: None;Tag: lalsuite-v7.26.1;Id: c90e1175f5e238741185744a4e516e58d42a9aec;;Builder: Unknown User <>;Repository status: CLEAN: All modifications committed
+16:22 INFO    : Analysis priors:
+16:22 INFO    : chirp_mass=bilby.gw.prior.UniformInComponentsChirpMass(minimum=1, maximum=130, name='chirp_mass', latex_label='$\\mathcal{M}$', unit='$M_{\\odot}$', boundary=None)
+16:22 INFO    : mass_ratio=bilby.gw.prior.UniformInComponentsMassRatio(minimum=0.125, maximum=1, name='mass_ratio', latex_label='$q$', unit=None, boundary=None, equal_mass=False)
+16:22 INFO    : a_1=Uniform(minimum=0, maximum=0.99, name='a_1', latex_label='$a_1$', unit=None, boundary=None)
+16:22 INFO    : a_2=Uniform(minimum=0, maximum=0.99, name='a_2', latex_label='$a_2$', unit=None, boundary=None)
+16:22 INFO    : tilt_1=Sine(minimum=0, maximum=3.141592653589793, name='tilt_1', latex_label='$\\theta_1$', unit=None, boundary=None)
+16:22 INFO    : tilt_2=Sine(minimum=0, maximum=3.141592653589793, name='tilt_2', latex_label='$\\theta_2$', unit=None, boundary=None)
+16:22 INFO    : phi_12=Uniform(minimum=0, maximum=6.283185307179586, name='phi_12', latex_label='$\\Delta\\phi$', unit=None, boundary='periodic')
+16:22 INFO    : phi_jl=Uniform(minimum=0, maximum=6.283185307179586, name='phi_jl', latex_label='$\\phi_{JL}$', unit=None, boundary='periodic')
+16:22 INFO    : dec=Cosine(minimum=-1.5707963267948966, maximum=1.5707963267948966, name='dec', latex_label='$\\mathrm{DEC}$', unit=None, boundary=None)
+16:22 INFO    : ra=Uniform(minimum=0, maximum=6.283185307179586, name='ra', latex_label='$\\mathrm{RA}$', unit=None, boundary='periodic')
+16:22 INFO    : theta_jn=Sine(minimum=0, maximum=3.141592653589793, name='theta_jn', latex_label='$\\theta_{JN}$', unit=None, boundary=None)
+16:22 INFO    : psi=Uniform(minimum=0, maximum=3.141592653589793, name='psi', latex_label='$\\psi$', unit=None, boundary='periodic')
+16:22 INFO    : phase=Uniform(minimum=0, maximum=6.283185307179586, name='phase', latex_label='$\\phi$', unit=None, boundary='periodic')
+16:22 INFO    : geocent_time=Uniform(minimum=1135136350.5, maximum=1135136350.6999998, name='geocent_time', latex_label='$t_c$', unit=None, boundary=None)
+16:22 INFO    : mass_1=Constraint(minimum=1, maximum=150, name='mass_1', latex_label='$m_1$', unit=None)
+16:22 INFO    : mass_2=Constraint(minimum=1, maximum=150, name='mass_2', latex_label='$m_2$', unit=None)
+16:22 INFO    : luminosity_distance=11905.507890937342
+16:22 INFO    : Analysis likelihood class: <class 'bilby.gw.likelihood.base.GravitationalWaveTransient'>
+16:22 INFO    : Analysis likelihood noise evidence: -4872.94793448188
+16:22 INFO    : Single likelihood evaluation took 1.996e-03 s
+16:22 INFO    : Using sampler Dynesty with kwargs {'nlive': 2000, 'bound': 'live', 'sample': 'acceptance-walk', 'periodic': None, 'reflective': None, 'update_interval': 600, 'first_update': None, 'rstate': None, 'queue_size': 48, 'pool': None, 'use_pool': None, 'live_points': None, 'logl_args': None, 'logl_kwargs': None, 'ptform_args': None, 'ptform_kwargs': None, 'enlarge': None, 'bootstrap': None, 'walks': 100, 'facc': 0.2, 'slices': None, 'ncdim': None, 'blob': False, 'save_evaluation_history': False, 'history_filename': None, 'maxiter': None, 'maxcall': None, 'dlogz': 0.1, 'logl_max': inf, 'add_live': True, 'print_progress': True, 'print_func': <bound method Dynesty._print_func of <bilby.core.sampler.dynesty.Dynesty object at 0x7ffeb1d7ba10>>, 'save_bounds': False, 'checkpoint_file': None, 'checkpoint_every': 60, 'resume': False, 'seed': None}
+16:22 INFO    : Global meta data was removed from the result object for compatibility. Use the `BILBY_INCLUDE_GLOBAL_METADATA` environment variable to include it. This behaviour will be removed in a future release. For more details see: https://bilby-dev.github.io/bilby/faq.html#global-meta-data
+16:22 INFO    : Checkpoint every check_point_delta_t = 600s
+16:22 INFO    : Using dynesty version 3.0.0
+16:22 INFO    : Setting up multiproccesing pool with 48 processes
+16:22 INFO    : Resume file GWTC-1-confident_marg2/outdir_GW151226/GW151226_resume.pickle does not exist.
+16:22 INFO    : Generating initial points from the prior
+16:22 INFO    : Using the bilby-implemented ensemble rwalk sampling method with an average of 60 accepted steps up to chain length 5000.
+16:33 INFO    : Written checkpoint file GWTC-1-confident_marg2/outdir_GW151226/GW151226_resume.pickle
+16:43 INFO    : Written checkpoint file GWTC-1-confident_marg2/outdir_GW151226/GW151226_resume.pickle
+16:54 INFO    : Written checkpoint file GWTC-1-confident_marg2/outdir_GW151226/GW151226_resume.pickle
+17:05 INFO    : Written checkpoint file GWTC-1-confident_marg2/outdir_GW151226/GW151226_resume.pickle
+17:16 INFO    : Written checkpoint file GWTC-1-confident_marg2/outdir_GW151226/GW151226_resume.pickle
+17:26 INFO    : Written checkpoint file GWTC-1-confident_marg2/outdir_GW151226/GW151226_resume.pickle
+17:37 INFO    : Written checkpoint file GWTC-1-confident_marg2/outdir_GW151226/GW151226_resume.pickle
+17:48 INFO    : Written checkpoint file GWTC-1-confident_marg2/outdir_GW151226/GW151226_resume.pickle
+17:59 INFO    : Written checkpoint file GWTC-1-confident_marg2/outdir_GW151226/GW151226_resume.pickle
+18:11 INFO    : Written checkpoint file GWTC-1-confident_marg2/outdir_GW151226/GW151226_resume.pickle
+18:22 INFO    : Written checkpoint file GWTC-1-confident_marg2/outdir_GW151226/GW151226_resume.pickle
+18:34 INFO    : Written checkpoint file GWTC-1-confident_marg2/outdir_GW151226/GW151226_resume.pickle
+18:46 INFO    : Written checkpoint file GWTC-1-confident_marg2/outdir_GW151226/GW151226_resume.pickle
+18:58 INFO    : Written checkpoint file GWTC-1-confident_marg2/outdir_GW151226/GW151226_resume.pickle
+18:59 INFO    : Written checkpoint file GWTC-1-confident_marg2/outdir_GW151226/GW151226_resume.pickle
+19:00 INFO    : Starting to close worker pool.
+19:00 INFO    : Finished closing worker pool.
+19:00 INFO    : Rejection sampling nested samples to obtain 10678 posterior samples
+19:00 INFO    : Sampling time: 2:37:27.614650
+19:00 WARNING : Result.save_to_file called with extension=True. This will default to json, and ignore the extension from the filename. This behaviour is deprecated and will be removed. 
+19:00 INFO    : Computing per-detector log likelihoods.
+19:00 INFO    : Using a pool with size 48 for nsamples=10678
+19:00 INFO    : Reconstructing marginalised parameters.
+19:00 INFO    : Using a pool with size 48 for nsamples=10678
+19:01 INFO    : Computing SNRs for every sample.
+19:01 INFO    : Using a pool with size 48 for nsamples=10678
+19:01 WARNING : Result.save_to_file called with extension=True. This will default to json, and ignore the extension from the filename. This behaviour is deprecated and will be removed. 
+19:01 INFO    : Summary of results:
+nsamples: 10678
+ln_noise_evidence: -4872.948
+ln_evidence: -4838.213 +/-  0.141
+ln_bayes_factor: 34.735 +/-  0.141
+
+19:01 INFO    : Starting GW170104
+19:01 INFO    : Downloading analysis data for ifo H1
+19:01 INFO    : Downloading psd data for ifo H1
+19:01 INFO    : Downloading analysis data for ifo L1
+19:01 INFO    : Downloading psd data for ifo L1
+19:02 INFO    : Saving data plots to GWTC-1-confident_marg2/outdir_GW170104
+19:02 INFO    : Waveform generator instantiated: WaveformGenerator(duration=None, sampling_frequency=None, start_time=0, frequency_domain_source_model=bilby.gw.source.lal_binary_black_hole, time_domain_source_model=None, parameter_conversion=bilby.gw.conversion.convert_to_lal_binary_black_hole_parameters, waveform_arguments={'waveform_approximant': 'IMRPhenomPv2', 'reference_frequency': 50})
+19:02 INFO    : Loaded distance marginalisation lookup table from .distance_marginalization_lookup.npz.
+19:02 INFO    : Running for label 'GW170104', output will be saved to 'GWTC-1-confident_marg2/outdir_GW170104'
+19:02 INFO    : Using lal version 7.7.0
+19:02 INFO    : Using lal git version Branch: None;Tag: lalsuite-v7.26.1;Id: c90e1175f5e238741185744a4e516e58d42a9aec;;Builder: Unknown User <>;Repository status: CLEAN: All modifications committed
+19:02 INFO    : Using lalsimulation version 6.2.0
+19:02 INFO    : Using lalsimulation git version Branch: None;Tag: lalsuite-v7.26.1;Id: c90e1175f5e238741185744a4e516e58d42a9aec;;Builder: Unknown User <>;Repository status: CLEAN: All modifications committed
+19:02 INFO    : Analysis priors:
+19:02 INFO    : chirp_mass=bilby.gw.prior.UniformInComponentsChirpMass(minimum=1, maximum=130, name='chirp_mass', latex_label='$\\mathcal{M}$', unit='$M_{\\odot}$', boundary=None)
+19:02 INFO    : mass_ratio=bilby.gw.prior.UniformInComponentsMassRatio(minimum=0.125, maximum=1, name='mass_ratio', latex_label='$q$', unit=None, boundary=None, equal_mass=False)
+19:02 INFO    : a_1=Uniform(minimum=0, maximum=0.99, name='a_1', latex_label='$a_1$', unit=None, boundary=None)
+19:02 INFO    : a_2=Uniform(minimum=0, maximum=0.99, name='a_2', latex_label='$a_2$', unit=None, boundary=None)
+19:02 INFO    : tilt_1=Sine(minimum=0, maximum=3.141592653589793, name='tilt_1', latex_label='$\\theta_1$', unit=None, boundary=None)
+19:02 INFO    : tilt_2=Sine(minimum=0, maximum=3.141592653589793, name='tilt_2', latex_label='$\\theta_2$', unit=None, boundary=None)
+19:02 INFO    : phi_12=Uniform(minimum=0, maximum=6.283185307179586, name='phi_12', latex_label='$\\Delta\\phi$', unit=None, boundary='periodic')
+19:02 INFO    : phi_jl=Uniform(minimum=0, maximum=6.283185307179586, name='phi_jl', latex_label='$\\phi_{JL}$', unit=None, boundary='periodic')
+19:02 INFO    : dec=Cosine(minimum=-1.5707963267948966, maximum=1.5707963267948966, name='dec', latex_label='$\\mathrm{DEC}$', unit=None, boundary=None)
+19:02 INFO    : ra=Uniform(minimum=0, maximum=6.283185307179586, name='ra', latex_label='$\\mathrm{RA}$', unit=None, boundary='periodic')
+19:02 INFO    : theta_jn=Sine(minimum=0, maximum=3.141592653589793, name='theta_jn', latex_label='$\\theta_{JN}$', unit=None, boundary=None)
+19:02 INFO    : psi=Uniform(minimum=0, maximum=3.141592653589793, name='psi', latex_label='$\\psi$', unit=None, boundary='periodic')
+19:02 INFO    : phase=Uniform(minimum=0, maximum=6.283185307179586, name='phase', latex_label='$\\phi$', unit=None, boundary='periodic')
+19:02 INFO    : geocent_time=Uniform(minimum=1167559936.5, maximum=1167559936.6999998, name='geocent_time', latex_label='$t_c$', unit=None, boundary=None)
+19:02 INFO    : mass_1=Constraint(minimum=1, maximum=150, name='mass_1', latex_label='$m_1$', unit=None)
+19:02 INFO    : mass_2=Constraint(minimum=1, maximum=150, name='mass_2', latex_label='$m_2$', unit=None)
+19:02 INFO    : luminosity_distance=11905.507890937342
+19:02 INFO    : Analysis likelihood class: <class 'bilby.gw.likelihood.base.GravitationalWaveTransient'>
+19:02 INFO    : Analysis likelihood noise evidence: -4696.303701161458
+19:02 INFO    : Single likelihood evaluation took 1.955e-03 s
+19:02 INFO    : Using sampler Dynesty with kwargs {'nlive': 2000, 'bound': 'live', 'sample': 'acceptance-walk', 'periodic': None, 'reflective': None, 'update_interval': 600, 'first_update': None, 'rstate': None, 'queue_size': 48, 'pool': None, 'use_pool': None, 'live_points': None, 'logl_args': None, 'logl_kwargs': None, 'ptform_args': None, 'ptform_kwargs': None, 'enlarge': None, 'bootstrap': None, 'walks': 100, 'facc': 0.2, 'slices': None, 'ncdim': None, 'blob': False, 'save_evaluation_history': False, 'history_filename': None, 'maxiter': None, 'maxcall': None, 'dlogz': 0.1, 'logl_max': inf, 'add_live': True, 'print_progress': True, 'print_func': <bound method Dynesty._print_func of <bilby.core.sampler.dynesty.Dynesty object at 0x7fff75f7cc90>>, 'save_bounds': False, 'checkpoint_file': None, 'checkpoint_every': 60, 'resume': False, 'seed': None}
+19:02 INFO    : Global meta data was removed from the result object for compatibility. Use the `BILBY_INCLUDE_GLOBAL_METADATA` environment variable to include it. This behaviour will be removed in a future release. For more details see: https://bilby-dev.github.io/bilby/faq.html#global-meta-data
+19:02 INFO    : Checkpoint every check_point_delta_t = 600s
+19:02 INFO    : Using dynesty version 3.0.0
+19:02 INFO    : Setting up multiproccesing pool with 48 processes
+19:02 INFO    : Resume file GWTC-1-confident_marg2/outdir_GW170104/GW170104_resume.pickle does not exist.
+19:02 INFO    : Generating initial points from the prior
+19:02 INFO    : Using the bilby-implemented ensemble rwalk sampling method with an average of 60 accepted steps up to chain length 5000.
+19:12 INFO    : Written checkpoint file GWTC-1-confident_marg2/outdir_GW170104/GW170104_resume.pickle
+19:23 INFO    : Written checkpoint file GWTC-1-confident_marg2/outdir_GW170104/GW170104_resume.pickle
+19:34 INFO    : Written checkpoint file GWTC-1-confident_marg2/outdir_GW170104/GW170104_resume.pickle
+19:44 INFO    : Written checkpoint file GWTC-1-confident_marg2/outdir_GW170104/GW170104_resume.pickle
+19:55 INFO    : Written checkpoint file GWTC-1-confident_marg2/outdir_GW170104/GW170104_resume.pickle
+20:06 INFO    : Written checkpoint file GWTC-1-confident_marg2/outdir_GW170104/GW170104_resume.pickle
+20:18 INFO    : Written checkpoint file GWTC-1-confident_marg2/outdir_GW170104/GW170104_resume.pickle
+20:25 INFO    : Written checkpoint file GWTC-1-confident_marg2/outdir_GW170104/GW170104_resume.pickle
+20:25 INFO    : Starting to close worker pool.
+20:25 INFO    : Finished closing worker pool.
+20:25 INFO    : Rejection sampling nested samples to obtain 10685 posterior samples
+20:25 INFO    : Sampling time: 1:23:15.483307
+20:25 WARNING : Result.save_to_file called with extension=True. This will default to json, and ignore the extension from the filename. This behaviour is deprecated and will be removed. 
+20:25 INFO    : Computing per-detector log likelihoods.
+20:25 INFO    : Using a pool with size 48 for nsamples=10685
+20:25 INFO    : Reconstructing marginalised parameters.
+20:25 INFO    : Using a pool with size 48 for nsamples=10685
+20:26 INFO    : Computing SNRs for every sample.
+20:26 INFO    : Using a pool with size 48 for nsamples=10685
+20:26 WARNING : Result.save_to_file called with extension=True. This will default to json, and ignore the extension from the filename. This behaviour is deprecated and will be removed. 
+20:26 INFO    : Summary of results:
+nsamples: 10685
+ln_noise_evidence: -4696.304
+ln_evidence: -4629.982 +/-  0.122
+ln_bayes_factor: 66.322 +/-  0.122
+
+20:26 INFO    : Starting GW170608
+20:26 INFO    : Downloading analysis data for ifo H1
+20:26 INFO    : Downloading psd data for ifo H1
+20:26 INFO    : Downloading analysis data for ifo L1
+20:26 INFO    : Downloading psd data for ifo L1
+20:27 INFO    : Saving data plots to GWTC-1-confident_marg2/outdir_GW170608
+20:27 INFO    : Waveform generator instantiated: WaveformGenerator(duration=None, sampling_frequency=None, start_time=0, frequency_domain_source_model=bilby.gw.source.lal_binary_black_hole, time_domain_source_model=None, parameter_conversion=bilby.gw.conversion.convert_to_lal_binary_black_hole_parameters, waveform_arguments={'waveform_approximant': 'IMRPhenomPv2', 'reference_frequency': 50})
+20:27 INFO    : Loaded distance marginalisation lookup table from .distance_marginalization_lookup.npz.
+20:27 INFO    : Running for label 'GW170608', output will be saved to 'GWTC-1-confident_marg2/outdir_GW170608'
+20:27 INFO    : Using lal version 7.7.0
+20:27 INFO    : Using lal git version Branch: None;Tag: lalsuite-v7.26.1;Id: c90e1175f5e238741185744a4e516e58d42a9aec;;Builder: Unknown User <>;Repository status: CLEAN: All modifications committed
+20:27 INFO    : Using lalsimulation version 6.2.0
+20:27 INFO    : Using lalsimulation git version Branch: None;Tag: lalsuite-v7.26.1;Id: c90e1175f5e238741185744a4e516e58d42a9aec;;Builder: Unknown User <>;Repository status: CLEAN: All modifications committed
+20:27 INFO    : Analysis priors:
+20:27 INFO    : chirp_mass=bilby.gw.prior.UniformInComponentsChirpMass(minimum=1, maximum=130, name='chirp_mass', latex_label='$\\mathcal{M}$', unit='$M_{\\odot}$', boundary=None)
+20:27 INFO    : mass_ratio=bilby.gw.prior.UniformInComponentsMassRatio(minimum=0.125, maximum=1, name='mass_ratio', latex_label='$q$', unit=None, boundary=None, equal_mass=False)
+20:27 INFO    : a_1=Uniform(minimum=0, maximum=0.99, name='a_1', latex_label='$a_1$', unit=None, boundary=None)
+20:27 INFO    : a_2=Uniform(minimum=0, maximum=0.99, name='a_2', latex_label='$a_2$', unit=None, boundary=None)
+20:27 INFO    : tilt_1=Sine(minimum=0, maximum=3.141592653589793, name='tilt_1', latex_label='$\\theta_1$', unit=None, boundary=None)
+20:27 INFO    : tilt_2=Sine(minimum=0, maximum=3.141592653589793, name='tilt_2', latex_label='$\\theta_2$', unit=None, boundary=None)
+20:27 INFO    : phi_12=Uniform(minimum=0, maximum=6.283185307179586, name='phi_12', latex_label='$\\Delta\\phi$', unit=None, boundary='periodic')
+20:27 INFO    : phi_jl=Uniform(minimum=0, maximum=6.283185307179586, name='phi_jl', latex_label='$\\phi_{JL}$', unit=None, boundary='periodic')
+20:27 INFO    : dec=Cosine(minimum=-1.5707963267948966, maximum=1.5707963267948966, name='dec', latex_label='$\\mathrm{DEC}$', unit=None, boundary=None)
+20:27 INFO    : ra=Uniform(minimum=0, maximum=6.283185307179586, name='ra', latex_label='$\\mathrm{RA}$', unit=None, boundary='periodic')
+20:27 INFO    : theta_jn=Sine(minimum=0, maximum=3.141592653589793, name='theta_jn', latex_label='$\\theta_{JN}$', unit=None, boundary=None)
+20:27 INFO    : psi=Uniform(minimum=0, maximum=3.141592653589793, name='psi', latex_label='$\\psi$', unit=None, boundary='periodic')
+20:27 INFO    : phase=Uniform(minimum=0, maximum=6.283185307179586, name='phase', latex_label='$\\phi$', unit=None, boundary='periodic')
+20:27 INFO    : geocent_time=Uniform(minimum=1180922494.4, maximum=1180922494.6, name='geocent_time', latex_label='$t_c$', unit=None, boundary=None)
+20:27 INFO    : mass_1=Constraint(minimum=1, maximum=150, name='mass_1', latex_label='$m_1$', unit=None)
+20:27 INFO    : mass_2=Constraint(minimum=1, maximum=150, name='mass_2', latex_label='$m_2$', unit=None)
+20:27 INFO    : luminosity_distance=11905.507890937342
+20:27 INFO    : Analysis likelihood class: <class 'bilby.gw.likelihood.base.GravitationalWaveTransient'>
+20:27 INFO    : Analysis likelihood noise evidence: -4674.608911560204
+20:27 INFO    : Single likelihood evaluation took 2.020e-03 s
+20:27 INFO    : Using sampler Dynesty with kwargs {'nlive': 2000, 'bound': 'live', 'sample': 'acceptance-walk', 'periodic': None, 'reflective': None, 'update_interval': 600, 'first_update': None, 'rstate': None, 'queue_size': 48, 'pool': None, 'use_pool': None, 'live_points': None, 'logl_args': None, 'logl_kwargs': None, 'ptform_args': None, 'ptform_kwargs': None, 'enlarge': None, 'bootstrap': None, 'walks': 100, 'facc': 0.2, 'slices': None, 'ncdim': None, 'blob': False, 'save_evaluation_history': False, 'history_filename': None, 'maxiter': None, 'maxcall': None, 'dlogz': 0.1, 'logl_max': inf, 'add_live': True, 'print_progress': True, 'print_func': <bound method Dynesty._print_func of <bilby.core.sampler.dynesty.Dynesty object at 0x7ffeb9aa75d0>>, 'save_bounds': False, 'checkpoint_file': None, 'checkpoint_every': 60, 'resume': False, 'seed': None}
+20:27 INFO    : Global meta data was removed from the result object for compatibility. Use the `BILBY_INCLUDE_GLOBAL_METADATA` environment variable to include it. This behaviour will be removed in a future release. For more details see: https://bilby-dev.github.io/bilby/faq.html#global-meta-data
+20:27 INFO    : Checkpoint every check_point_delta_t = 600s
+20:27 INFO    : Using dynesty version 3.0.0
+20:27 INFO    : Setting up multiproccesing pool with 48 processes
+20:27 INFO    : Resume file GWTC-1-confident_marg2/outdir_GW170608/GW170608_resume.pickle does not exist.
+20:27 INFO    : Generating initial points from the prior
+20:27 INFO    : Using the bilby-implemented ensemble rwalk sampling method with an average of 60 accepted steps up to chain length 5000.
+20:37 INFO    : Written checkpoint file GWTC-1-confident_marg2/outdir_GW170608/GW170608_resume.pickle
+20:48 INFO    : Written checkpoint file GWTC-1-confident_marg2/outdir_GW170608/GW170608_resume.pickle
+20:48 WARNING : The data appears to lie in a lower-dimensional subspace of the space in which it is expressed. This has resulted in a singular data covariance matrix, which cannot be treated using the algorithms implemented in `gaussian_kde`. Consider performing principal component analysis / dimensionality reduction and using `gaussian_kde` with the transformed data.
+20:48 WARNING : Failed to create dynesty state plot at checkpoint
+20:48 WARNING : The data appears to lie in a lower-dimensional subspace of the space in which it is expressed. This has resulted in a singular data covariance matrix, which cannot be treated using the algorithms implemented in `gaussian_kde`. Consider performing principal component analysis / dimensionality reduction and using `gaussian_kde` with the transformed data.
+20:48 WARNING : Failed to create dynesty unit state plot at checkpoint
+20:48 WARNING : The data appears to lie in a lower-dimensional subspace of the space in which it is expressed. This has resulted in a singular data covariance matrix, which cannot be treated using the algorithms implemented in `gaussian_kde`. Consider performing principal component analysis / dimensionality reduction and using `gaussian_kde` with the transformed data.
+20:48 WARNING : Failed to create dynesty run plot at checkpoint
+20:58 INFO    : Written checkpoint file GWTC-1-confident_marg2/outdir_GW170608/GW170608_resume.pickle
+21:09 INFO    : Written checkpoint file GWTC-1-confident_marg2/outdir_GW170608/GW170608_resume.pickle
+21:20 INFO    : Written checkpoint file GWTC-1-confident_marg2/outdir_GW170608/GW170608_resume.pickle
+21:31 INFO    : Written checkpoint file GWTC-1-confident_marg2/outdir_GW170608/GW170608_resume.pickle
+21:42 INFO    : Written checkpoint file GWTC-1-confident_marg2/outdir_GW170608/GW170608_resume.pickle
+21:53 INFO    : Written checkpoint file GWTC-1-confident_marg2/outdir_GW170608/GW170608_resume.pickle
+22:04 INFO    : Written checkpoint file GWTC-1-confident_marg2/outdir_GW170608/GW170608_resume.pickle
+22:15 INFO    : Written checkpoint file GWTC-1-confident_marg2/outdir_GW170608/GW170608_resume.pickle
+22:26 INFO    : Written checkpoint file GWTC-1-confident_marg2/outdir_GW170608/GW170608_resume.pickle
+22:38 INFO    : Written checkpoint file GWTC-1-confident_marg2/outdir_GW170608/GW170608_resume.pickle
+22:50 INFO    : Written checkpoint file GWTC-1-confident_marg2/outdir_GW170608/GW170608_resume.pickle
+23:01 INFO    : Written checkpoint file GWTC-1-confident_marg2/outdir_GW170608/GW170608_resume.pickle
+23:13 INFO    : Written checkpoint file GWTC-1-confident_marg2/outdir_GW170608/GW170608_resume.pickle
+23:25 INFO    : Written checkpoint file GWTC-1-confident_marg2/outdir_GW170608/GW170608_resume.pickle
+23:37 INFO    : Written checkpoint file GWTC-1-confident_marg2/outdir_GW170608/GW170608_resume.pickle
+23:50 INFO    : Written checkpoint file GWTC-1-confident_marg2/outdir_GW170608/GW170608_resume.pickle
+00:02 INFO    : Written checkpoint file GWTC-1-confident_marg2/outdir_GW170608/GW170608_resume.pickle
+00:09 INFO    : Written checkpoint file GWTC-1-confident_marg2/outdir_GW170608/GW170608_resume.pickle
+00:10 INFO    : Starting to close worker pool.
+00:10 INFO    : Finished closing worker pool.
+00:10 INFO    : Rejection sampling nested samples to obtain 11608 posterior samples
+00:10 INFO    : Sampling time: 3:42:54.407039
+00:10 WARNING : Result.save_to_file called with extension=True. This will default to json, and ignore the extension from the filename. This behaviour is deprecated and will be removed. 
+00:10 INFO    : Computing per-detector log likelihoods.
+00:10 INFO    : Using a pool with size 48 for nsamples=11608
+00:10 INFO    : Reconstructing marginalised parameters.
+00:10 INFO    : Using a pool with size 48 for nsamples=11608
+00:10 INFO    : Computing SNRs for every sample.
+00:11 INFO    : Using a pool with size 48 for nsamples=11608
+00:11 WARNING : Result.save_to_file called with extension=True. This will default to json, and ignore the extension from the filename. This behaviour is deprecated and will be removed. 
+00:11 INFO    : Summary of results:
+nsamples: 11608
+ln_noise_evidence: -4674.609
+ln_evidence: -4586.536 +/-  0.160
+ln_bayes_factor: 88.073 +/-  0.160
+
+00:11 INFO    : Starting GW170729
+00:11 INFO    : Downloading analysis data for ifo H1
+00:11 INFO    : Downloading psd data for ifo H1
+00:11 INFO    : Downloading analysis data for ifo L1
+00:11 INFO    : Downloading psd data for ifo L1
+00:11 INFO    : Downloading analysis data for ifo V1
+00:12 INFO    : Downloading psd data for ifo V1
+00:12 INFO    : Saving data plots to GWTC-1-confident_marg2/outdir_GW170729
+00:12 INFO    : Waveform generator instantiated: WaveformGenerator(duration=None, sampling_frequency=None, start_time=0, frequency_domain_source_model=bilby.gw.source.lal_binary_black_hole, time_domain_source_model=None, parameter_conversion=bilby.gw.conversion.convert_to_lal_binary_black_hole_parameters, waveform_arguments={'waveform_approximant': 'IMRPhenomPv2', 'reference_frequency': 50})
+00:12 INFO    : Loaded distance marginalisation lookup table from .distance_marginalization_lookup.npz.
+00:12 INFO    : Running for label 'GW170729', output will be saved to 'GWTC-1-confident_marg2/outdir_GW170729'
+00:12 INFO    : Using lal version 7.7.0
+00:12 INFO    : Using lal git version Branch: None;Tag: lalsuite-v7.26.1;Id: c90e1175f5e238741185744a4e516e58d42a9aec;;Builder: Unknown User <>;Repository status: CLEAN: All modifications committed
+00:12 INFO    : Using lalsimulation version 6.2.0
+00:12 INFO    : Using lalsimulation git version Branch: None;Tag: lalsuite-v7.26.1;Id: c90e1175f5e238741185744a4e516e58d42a9aec;;Builder: Unknown User <>;Repository status: CLEAN: All modifications committed
+00:12 INFO    : Analysis priors:
+00:12 INFO    : chirp_mass=bilby.gw.prior.UniformInComponentsChirpMass(minimum=1, maximum=130, name='chirp_mass', latex_label='$\\mathcal{M}$', unit='$M_{\\odot}$', boundary=None)
+00:12 INFO    : mass_ratio=bilby.gw.prior.UniformInComponentsMassRatio(minimum=0.125, maximum=1, name='mass_ratio', latex_label='$q$', unit=None, boundary=None, equal_mass=False)
+00:12 INFO    : a_1=Uniform(minimum=0, maximum=0.99, name='a_1', latex_label='$a_1$', unit=None, boundary=None)
+00:12 INFO    : a_2=Uniform(minimum=0, maximum=0.99, name='a_2', latex_label='$a_2$', unit=None, boundary=None)
+00:12 INFO    : tilt_1=Sine(minimum=0, maximum=3.141592653589793, name='tilt_1', latex_label='$\\theta_1$', unit=None, boundary=None)
+00:12 INFO    : tilt_2=Sine(minimum=0, maximum=3.141592653589793, name='tilt_2', latex_label='$\\theta_2$', unit=None, boundary=None)
+00:12 INFO    : phi_12=Uniform(minimum=0, maximum=6.283185307179586, name='phi_12', latex_label='$\\Delta\\phi$', unit=None, boundary='periodic')
+00:12 INFO    : phi_jl=Uniform(minimum=0, maximum=6.283185307179586, name='phi_jl', latex_label='$\\phi_{JL}$', unit=None, boundary='periodic')
+00:12 INFO    : dec=Cosine(minimum=-1.5707963267948966, maximum=1.5707963267948966, name='dec', latex_label='$\\mathrm{DEC}$', unit=None, boundary=None)
+00:12 INFO    : ra=Uniform(minimum=0, maximum=6.283185307179586, name='ra', latex_label='$\\mathrm{RA}$', unit=None, boundary='periodic')
+00:12 INFO    : theta_jn=Sine(minimum=0, maximum=3.141592653589793, name='theta_jn', latex_label='$\\theta_{JN}$', unit=None, boundary=None)
+00:12 INFO    : psi=Uniform(minimum=0, maximum=3.141592653589793, name='psi', latex_label='$\\psi$', unit=None, boundary='periodic')
+00:12 INFO    : phase=Uniform(minimum=0, maximum=6.283185307179586, name='phase', latex_label='$\\phi$', unit=None, boundary='periodic')
+00:12 INFO    : geocent_time=Uniform(minimum=1185389807.2, maximum=1185389807.3999999, name='geocent_time', latex_label='$t_c$', unit=None, boundary=None)
+00:12 INFO    : mass_1=Constraint(minimum=1, maximum=150, name='mass_1', latex_label='$m_1$', unit=None)
+00:12 INFO    : mass_2=Constraint(minimum=1, maximum=150, name='mass_2', latex_label='$m_2$', unit=None)
+00:12 INFO    : luminosity_distance=11905.507890937342
+00:12 INFO    : Analysis likelihood class: <class 'bilby.gw.likelihood.base.GravitationalWaveTransient'>
+00:12 INFO    : Analysis likelihood noise evidence: -7705.063215369753
+00:12 INFO    : Single likelihood evaluation took 2.322e-03 s
+00:12 INFO    : Using sampler Dynesty with kwargs {'nlive': 2000, 'bound': 'live', 'sample': 'acceptance-walk', 'periodic': None, 'reflective': None, 'update_interval': 600, 'first_update': None, 'rstate': None, 'queue_size': 48, 'pool': None, 'use_pool': None, 'live_points': None, 'logl_args': None, 'logl_kwargs': None, 'ptform_args': None, 'ptform_kwargs': None, 'enlarge': None, 'bootstrap': None, 'walks': 100, 'facc': 0.2, 'slices': None, 'ncdim': None, 'blob': False, 'save_evaluation_history': False, 'history_filename': None, 'maxiter': None, 'maxcall': None, 'dlogz': 0.1, 'logl_max': inf, 'add_live': True, 'print_progress': True, 'print_func': <bound method Dynesty._print_func of <bilby.core.sampler.dynesty.Dynesty object at 0x7ffe9329bf90>>, 'save_bounds': False, 'checkpoint_file': None, 'checkpoint_every': 60, 'resume': False, 'seed': None}
+00:12 INFO    : Global meta data was removed from the result object for compatibility. Use the `BILBY_INCLUDE_GLOBAL_METADATA` environment variable to include it. This behaviour will be removed in a future release. For more details see: https://bilby-dev.github.io/bilby/faq.html#global-meta-data
+00:12 INFO    : Checkpoint every check_point_delta_t = 600s
+00:12 INFO    : Using dynesty version 3.0.0
+00:12 INFO    : Setting up multiproccesing pool with 48 processes
+00:12 INFO    : Resume file GWTC-1-confident_marg2/outdir_GW170729/GW170729_resume.pickle does not exist.
+00:12 INFO    : Generating initial points from the prior
+00:12 INFO    : Using the bilby-implemented ensemble rwalk sampling method with an average of 60 accepted steps up to chain length 5000.
+00:23 INFO    : Written checkpoint file GWTC-1-confident_marg2/outdir_GW170729/GW170729_resume.pickle
+00:33 INFO    : Written checkpoint file GWTC-1-confident_marg2/outdir_GW170729/GW170729_resume.pickle
+00:44 INFO    : Written checkpoint file GWTC-1-confident_marg2/outdir_GW170729/GW170729_resume.pickle
+00:55 INFO    : Written checkpoint file GWTC-1-confident_marg2/outdir_GW170729/GW170729_resume.pickle
+01:06 INFO    : Written checkpoint file GWTC-1-confident_marg2/outdir_GW170729/GW170729_resume.pickle
+01:17 INFO    : Written checkpoint file GWTC-1-confident_marg2/outdir_GW170729/GW170729_resume.pickle
+01:20 INFO    : Written checkpoint file GWTC-1-confident_marg2/outdir_GW170729/GW170729_resume.pickle
+01:20 INFO    : Starting to close worker pool.
+01:20 INFO    : Finished closing worker pool.
+01:20 INFO    : Rejection sampling nested samples to obtain 11851 posterior samples
+01:20 INFO    : Sampling time: 1:07:54.169214
+01:20 WARNING : Result.save_to_file called with extension=True. This will default to json, and ignore the extension from the filename. This behaviour is deprecated and will be removed. 
+01:20 INFO    : Computing per-detector log likelihoods.
+01:20 INFO    : Using a pool with size 48 for nsamples=11851
+01:20 INFO    : Reconstructing marginalised parameters.
+01:20 INFO    : Using a pool with size 48 for nsamples=11851
+01:21 INFO    : Computing SNRs for every sample.
+01:21 INFO    : Using a pool with size 48 for nsamples=11851
+01:21 WARNING : Result.save_to_file called with extension=True. This will default to json, and ignore the extension from the filename. This behaviour is deprecated and will be removed. 
+01:21 INFO    : Summary of results:
+nsamples: 11851
+ln_noise_evidence: -7705.063
+ln_evidence: -7666.615 +/-  0.114
+ln_bayes_factor: 38.448 +/-  0.114
+
+01:21 INFO    : Starting GW170809
+01:21 INFO    : Downloading analysis data for ifo H1
+01:21 INFO    : Downloading psd data for ifo H1
+01:21 INFO    : Downloading analysis data for ifo L1
+01:21 INFO    : Downloading psd data for ifo L1
+01:22 INFO    : Downloading analysis data for ifo V1
+01:22 INFO    : Downloading psd data for ifo V1
+01:22 INFO    : Saving data plots to GWTC-1-confident_marg2/outdir_GW170809
+01:22 INFO    : Waveform generator instantiated: WaveformGenerator(duration=None, sampling_frequency=None, start_time=0, frequency_domain_source_model=bilby.gw.source.lal_binary_black_hole, time_domain_source_model=None, parameter_conversion=bilby.gw.conversion.convert_to_lal_binary_black_hole_parameters, waveform_arguments={'waveform_approximant': 'IMRPhenomPv2', 'reference_frequency': 50})
+01:22 INFO    : Loaded distance marginalisation lookup table from .distance_marginalization_lookup.npz.
+01:22 INFO    : Running for label 'GW170809', output will be saved to 'GWTC-1-confident_marg2/outdir_GW170809'
+01:22 INFO    : Using lal version 7.7.0
+01:22 INFO    : Using lal git version Branch: None;Tag: lalsuite-v7.26.1;Id: c90e1175f5e238741185744a4e516e58d42a9aec;;Builder: Unknown User <>;Repository status: CLEAN: All modifications committed
+01:22 INFO    : Using lalsimulation version 6.2.0
+01:22 INFO    : Using lalsimulation git version Branch: None;Tag: lalsuite-v7.26.1;Id: c90e1175f5e238741185744a4e516e58d42a9aec;;Builder: Unknown User <>;Repository status: CLEAN: All modifications committed
+01:22 INFO    : Analysis priors:
+01:22 INFO    : chirp_mass=bilby.gw.prior.UniformInComponentsChirpMass(minimum=1, maximum=130, name='chirp_mass', latex_label='$\\mathcal{M}$', unit='$M_{\\odot}$', boundary=None)
+01:22 INFO    : mass_ratio=bilby.gw.prior.UniformInComponentsMassRatio(minimum=0.125, maximum=1, name='mass_ratio', latex_label='$q$', unit=None, boundary=None, equal_mass=False)
+01:22 INFO    : a_1=Uniform(minimum=0, maximum=0.99, name='a_1', latex_label='$a_1$', unit=None, boundary=None)
+01:22 INFO    : a_2=Uniform(minimum=0, maximum=0.99, name='a_2', latex_label='$a_2$', unit=None, boundary=None)
+01:22 INFO    : tilt_1=Sine(minimum=0, maximum=3.141592653589793, name='tilt_1', latex_label='$\\theta_1$', unit=None, boundary=None)
+01:22 INFO    : tilt_2=Sine(minimum=0, maximum=3.141592653589793, name='tilt_2', latex_label='$\\theta_2$', unit=None, boundary=None)
+01:22 INFO    : phi_12=Uniform(minimum=0, maximum=6.283185307179586, name='phi_12', latex_label='$\\Delta\\phi$', unit=None, boundary='periodic')
+01:22 INFO    : phi_jl=Uniform(minimum=0, maximum=6.283185307179586, name='phi_jl', latex_label='$\\phi_{JL}$', unit=None, boundary='periodic')
+01:22 INFO    : dec=Cosine(minimum=-1.5707963267948966, maximum=1.5707963267948966, name='dec', latex_label='$\\mathrm{DEC}$', unit=None, boundary=None)
+01:22 INFO    : ra=Uniform(minimum=0, maximum=6.283185307179586, name='ra', latex_label='$\\mathrm{RA}$', unit=None, boundary='periodic')
+01:22 INFO    : theta_jn=Sine(minimum=0, maximum=3.141592653589793, name='theta_jn', latex_label='$\\theta_{JN}$', unit=None, boundary=None)
+01:22 INFO    : psi=Uniform(minimum=0, maximum=3.141592653589793, name='psi', latex_label='$\\psi$', unit=None, boundary='periodic')
+01:22 INFO    : phase=Uniform(minimum=0, maximum=6.283185307179586, name='phase', latex_label='$\\phi$', unit=None, boundary='periodic')
+01:22 INFO    : geocent_time=Uniform(minimum=1186302519.7, maximum=1186302519.8999999, name='geocent_time', latex_label='$t_c$', unit=None, boundary=None)
+01:22 INFO    : mass_1=Constraint(minimum=1, maximum=150, name='mass_1', latex_label='$m_1$', unit=None)
+01:22 INFO    : mass_2=Constraint(minimum=1, maximum=150, name='mass_2', latex_label='$m_2$', unit=None)
+01:22 INFO    : luminosity_distance=11905.507890937342
+01:22 INFO    : Analysis likelihood class: <class 'bilby.gw.likelihood.base.GravitationalWaveTransient'>
+01:22 INFO    : Analysis likelihood noise evidence: -6671.629550032083
+01:22 INFO    : Single likelihood evaluation took 2.233e-03 s
+01:22 INFO    : Using sampler Dynesty with kwargs {'nlive': 2000, 'bound': 'live', 'sample': 'acceptance-walk', 'periodic': None, 'reflective': None, 'update_interval': 600, 'first_update': None, 'rstate': None, 'queue_size': 48, 'pool': None, 'use_pool': None, 'live_points': None, 'logl_args': None, 'logl_kwargs': None, 'ptform_args': None, 'ptform_kwargs': None, 'enlarge': None, 'bootstrap': None, 'walks': 100, 'facc': 0.2, 'slices': None, 'ncdim': None, 'blob': False, 'save_evaluation_history': False, 'history_filename': None, 'maxiter': None, 'maxcall': None, 'dlogz': 0.1, 'logl_max': inf, 'add_live': True, 'print_progress': True, 'print_func': <bound method Dynesty._print_func of <bilby.core.sampler.dynesty.Dynesty object at 0x7ffef955e2d0>>, 'save_bounds': False, 'checkpoint_file': None, 'checkpoint_every': 60, 'resume': False, 'seed': None}
+01:22 INFO    : Global meta data was removed from the result object for compatibility. Use the `BILBY_INCLUDE_GLOBAL_METADATA` environment variable to include it. This behaviour will be removed in a future release. For more details see: https://bilby-dev.github.io/bilby/faq.html#global-meta-data
+01:22 INFO    : Checkpoint every check_point_delta_t = 600s
+01:22 INFO    : Using dynesty version 3.0.0
+01:22 INFO    : Setting up multiproccesing pool with 48 processes
+01:22 INFO    : Resume file GWTC-1-confident_marg2/outdir_GW170809/GW170809_resume.pickle does not exist.
+01:22 INFO    : Generating initial points from the prior
+01:22 INFO    : Using the bilby-implemented ensemble rwalk sampling method with an average of 60 accepted steps up to chain length 5000.
+01:32 INFO    : Written checkpoint file GWTC-1-confident_marg2/outdir_GW170809/GW170809_resume.pickle
+01:43 INFO    : Written checkpoint file GWTC-1-confident_marg2/outdir_GW170809/GW170809_resume.pickle
+01:54 INFO    : Written checkpoint file GWTC-1-confident_marg2/outdir_GW170809/GW170809_resume.pickle
+02:05 INFO    : Written checkpoint file GWTC-1-confident_marg2/outdir_GW170809/GW170809_resume.pickle
+02:16 INFO    : Written checkpoint file GWTC-1-confident_marg2/outdir_GW170809/GW170809_resume.pickle
+02:27 INFO    : Written checkpoint file GWTC-1-confident_marg2/outdir_GW170809/GW170809_resume.pickle
+02:38 INFO    : Written checkpoint file GWTC-1-confident_marg2/outdir_GW170809/GW170809_resume.pickle
+02:49 INFO    : Written checkpoint file GWTC-1-confident_marg2/outdir_GW170809/GW170809_resume.pickle
+02:57 INFO    : Written checkpoint file GWTC-1-confident_marg2/outdir_GW170809/GW170809_resume.pickle
+02:58 INFO    : Starting to close worker pool.
+02:58 INFO    : Finished closing worker pool.
+02:58 INFO    : Rejection sampling nested samples to obtain 10615 posterior samples
+02:58 INFO    : Sampling time: 1:35:34.095030
+02:58 WARNING : Result.save_to_file called with extension=True. This will default to json, and ignore the extension from the filename. This behaviour is deprecated and will be removed. 
+02:58 INFO    : Computing per-detector log likelihoods.
+02:58 INFO    : Using a pool with size 48 for nsamples=10615
+02:58 INFO    : Reconstructing marginalised parameters.
+02:58 INFO    : Using a pool with size 48 for nsamples=10615
+02:58 INFO    : Computing SNRs for every sample.
+02:58 INFO    : Using a pool with size 48 for nsamples=10615
+02:59 WARNING : Result.save_to_file called with extension=True. This will default to json, and ignore the extension from the filename. This behaviour is deprecated and will be removed. 
+02:59 INFO    : Summary of results:
+nsamples: 10615
+ln_noise_evidence: -6671.630
+ln_evidence: -6627.864 +/-  0.126
+ln_bayes_factor: 43.766 +/-  0.126
+
+02:59 INFO    : Starting GW170814
+02:59 INFO    : Downloading analysis data for ifo H1
+02:59 INFO    : Downloading psd data for ifo H1
+02:59 INFO    : Downloading analysis data for ifo L1
+02:59 INFO    : Downloading psd data for ifo L1
+02:59 INFO    : Downloading analysis data for ifo V1
+02:59 INFO    : Downloading psd data for ifo V1
+02:59 INFO    : Saving data plots to GWTC-1-confident_marg2/outdir_GW170814
+02:59 INFO    : Waveform generator instantiated: WaveformGenerator(duration=None, sampling_frequency=None, start_time=0, frequency_domain_source_model=bilby.gw.source.lal_binary_black_hole, time_domain_source_model=None, parameter_conversion=bilby.gw.conversion.convert_to_lal_binary_black_hole_parameters, waveform_arguments={'waveform_approximant': 'IMRPhenomPv2', 'reference_frequency': 50})
+02:59 INFO    : Loaded distance marginalisation lookup table from .distance_marginalization_lookup.npz.
+02:59 INFO    : Running for label 'GW170814', output will be saved to 'GWTC-1-confident_marg2/outdir_GW170814'
+02:59 INFO    : Using lal version 7.7.0
+02:59 INFO    : Using lal git version Branch: None;Tag: lalsuite-v7.26.1;Id: c90e1175f5e238741185744a4e516e58d42a9aec;;Builder: Unknown User <>;Repository status: CLEAN: All modifications committed
+02:59 INFO    : Using lalsimulation version 6.2.0
+02:59 INFO    : Using lalsimulation git version Branch: None;Tag: lalsuite-v7.26.1;Id: c90e1175f5e238741185744a4e516e58d42a9aec;;Builder: Unknown User <>;Repository status: CLEAN: All modifications committed
+02:59 INFO    : Analysis priors:
+02:59 INFO    : chirp_mass=bilby.gw.prior.UniformInComponentsChirpMass(minimum=1, maximum=130, name='chirp_mass', latex_label='$\\mathcal{M}$', unit='$M_{\\odot}$', boundary=None)
+02:59 INFO    : mass_ratio=bilby.gw.prior.UniformInComponentsMassRatio(minimum=0.125, maximum=1, name='mass_ratio', latex_label='$q$', unit=None, boundary=None, equal_mass=False)
+02:59 INFO    : a_1=Uniform(minimum=0, maximum=0.99, name='a_1', latex_label='$a_1$', unit=None, boundary=None)
+02:59 INFO    : a_2=Uniform(minimum=0, maximum=0.99, name='a_2', latex_label='$a_2$', unit=None, boundary=None)
+02:59 INFO    : tilt_1=Sine(minimum=0, maximum=3.141592653589793, name='tilt_1', latex_label='$\\theta_1$', unit=None, boundary=None)
+02:59 INFO    : tilt_2=Sine(minimum=0, maximum=3.141592653589793, name='tilt_2', latex_label='$\\theta_2$', unit=None, boundary=None)
+02:59 INFO    : phi_12=Uniform(minimum=0, maximum=6.283185307179586, name='phi_12', latex_label='$\\Delta\\phi$', unit=None, boundary='periodic')
+02:59 INFO    : phi_jl=Uniform(minimum=0, maximum=6.283185307179586, name='phi_jl', latex_label='$\\phi_{JL}$', unit=None, boundary='periodic')
+02:59 INFO    : dec=Cosine(minimum=-1.5707963267948966, maximum=1.5707963267948966, name='dec', latex_label='$\\mathrm{DEC}$', unit=None, boundary=None)
+02:59 INFO    : ra=Uniform(minimum=0, maximum=6.283185307179586, name='ra', latex_label='$\\mathrm{RA}$', unit=None, boundary='periodic')
+02:59 INFO    : theta_jn=Sine(minimum=0, maximum=3.141592653589793, name='theta_jn', latex_label='$\\theta_{JN}$', unit=None, boundary=None)
+02:59 INFO    : psi=Uniform(minimum=0, maximum=3.141592653589793, name='psi', latex_label='$\\psi$', unit=None, boundary='periodic')
+02:59 INFO    : phase=Uniform(minimum=0, maximum=6.283185307179586, name='phase', latex_label='$\\phi$', unit=None, boundary='periodic')
+02:59 INFO    : geocent_time=Uniform(minimum=1186741861.4, maximum=1186741861.6, name='geocent_time', latex_label='$t_c$', unit=None, boundary=None)
+02:59 INFO    : mass_1=Constraint(minimum=1, maximum=150, name='mass_1', latex_label='$m_1$', unit=None)
+02:59 INFO    : mass_2=Constraint(minimum=1, maximum=150, name='mass_2', latex_label='$m_2$', unit=None)
+02:59 INFO    : luminosity_distance=11905.507890937342
+02:59 INFO    : Analysis likelihood class: <class 'bilby.gw.likelihood.base.GravitationalWaveTransient'>
+02:59 INFO    : Analysis likelihood noise evidence: -7148.191662842052
+02:59 INFO    : Single likelihood evaluation took 2.245e-03 s
+02:59 INFO    : Using sampler Dynesty with kwargs {'nlive': 2000, 'bound': 'live', 'sample': 'acceptance-walk', 'periodic': None, 'reflective': None, 'update_interval': 600, 'first_update': None, 'rstate': None, 'queue_size': 48, 'pool': None, 'use_pool': None, 'live_points': None, 'logl_args': None, 'logl_kwargs': None, 'ptform_args': None, 'ptform_kwargs': None, 'enlarge': None, 'bootstrap': None, 'walks': 100, 'facc': 0.2, 'slices': None, 'ncdim': None, 'blob': False, 'save_evaluation_history': False, 'history_filename': None, 'maxiter': None, 'maxcall': None, 'dlogz': 0.1, 'logl_max': inf, 'add_live': True, 'print_progress': True, 'print_func': <bound method Dynesty._print_func of <bilby.core.sampler.dynesty.Dynesty object at 0x7ffea6ab2d90>>, 'save_bounds': False, 'checkpoint_file': None, 'checkpoint_every': 60, 'resume': False, 'seed': None}
+02:59 INFO    : Global meta data was removed from the result object for compatibility. Use the `BILBY_INCLUDE_GLOBAL_METADATA` environment variable to include it. This behaviour will be removed in a future release. For more details see: https://bilby-dev.github.io/bilby/faq.html#global-meta-data
+02:59 INFO    : Checkpoint every check_point_delta_t = 600s
+02:59 INFO    : Using dynesty version 3.0.0
+02:59 INFO    : Setting up multiproccesing pool with 48 processes
+02:59 INFO    : Resume file GWTC-1-confident_marg2/outdir_GW170814/GW170814_resume.pickle does not exist.
+02:59 INFO    : Generating initial points from the prior
+03:00 INFO    : Using the bilby-implemented ensemble rwalk sampling method with an average of 60 accepted steps up to chain length 5000.
+03:10 INFO    : Written checkpoint file GWTC-1-confident_marg2/outdir_GW170814/GW170814_resume.pickle
+03:21 INFO    : Written checkpoint file GWTC-1-confident_marg2/outdir_GW170814/GW170814_resume.pickle
+03:31 INFO    : Written checkpoint file GWTC-1-confident_marg2/outdir_GW170814/GW170814_resume.pickle
+03:42 INFO    : Written checkpoint file GWTC-1-confident_marg2/outdir_GW170814/GW170814_resume.pickle
+03:53 INFO    : Written checkpoint file GWTC-1-confident_marg2/outdir_GW170814/GW170814_resume.pickle
+04:04 INFO    : Written checkpoint file GWTC-1-confident_marg2/outdir_GW170814/GW170814_resume.pickle
+04:15 INFO    : Written checkpoint file GWTC-1-confident_marg2/outdir_GW170814/GW170814_resume.pickle
+04:26 INFO    : Written checkpoint file GWTC-1-confident_marg2/outdir_GW170814/GW170814_resume.pickle
+04:38 INFO    : Written checkpoint file GWTC-1-confident_marg2/outdir_GW170814/GW170814_resume.pickle
+04:49 INFO    : Written checkpoint file GWTC-1-confident_marg2/outdir_GW170814/GW170814_resume.pickle
+05:00 INFO    : Written checkpoint file GWTC-1-confident_marg2/outdir_GW170814/GW170814_resume.pickle
+05:07 INFO    : Written checkpoint file GWTC-1-confident_marg2/outdir_GW170814/GW170814_resume.pickle
+05:08 INFO    : Starting to close worker pool.
+05:08 INFO    : Finished closing worker pool.
+05:08 INFO    : Rejection sampling nested samples to obtain 11250 posterior samples
+05:08 INFO    : Sampling time: 2:08:21.737108
+05:08 WARNING : Result.save_to_file called with extension=True. This will default to json, and ignore the extension from the filename. This behaviour is deprecated and will be removed. 
+05:08 INFO    : Computing per-detector log likelihoods.
+05:08 INFO    : Using a pool with size 48 for nsamples=11250
+05:08 INFO    : Reconstructing marginalised parameters.
+05:08 INFO    : Using a pool with size 48 for nsamples=11250
+05:09 INFO    : Computing SNRs for every sample.
+05:09 INFO    : Using a pool with size 48 for nsamples=11250
+05:09 WARNING : Result.save_to_file called with extension=True. This will default to json, and ignore the extension from the filename. This behaviour is deprecated and will be removed. 
+05:09 INFO    : Summary of results:
+nsamples: 11250
+ln_noise_evidence: -7148.192
+ln_evidence: -7024.972 +/-  0.139
+ln_bayes_factor: 123.219 +/-  0.139
+
+05:09 INFO    : Starting GW170818
+05:09 INFO    : Downloading analysis data for ifo H1
+05:09 INFO    : Downloading psd data for ifo H1
+05:10 INFO    : Downloading analysis data for ifo L1
+05:10 INFO    : Downloading psd data for ifo L1
+05:14 INFO    : Downloading analysis data for ifo V1
+05:14 INFO    : Downloading psd data for ifo V1
+05:15 INFO    : Saving data plots to GWTC-1-confident_marg2/outdir_GW170818
+05:15 INFO    : Waveform generator instantiated: WaveformGenerator(duration=None, sampling_frequency=None, start_time=0, frequency_domain_source_model=bilby.gw.source.lal_binary_black_hole, time_domain_source_model=None, parameter_conversion=bilby.gw.conversion.convert_to_lal_binary_black_hole_parameters, waveform_arguments={'waveform_approximant': 'IMRPhenomPv2', 'reference_frequency': 50})
+05:15 INFO    : Loaded distance marginalisation lookup table from .distance_marginalization_lookup.npz.
+05:15 INFO    : Running for label 'GW170818', output will be saved to 'GWTC-1-confident_marg2/outdir_GW170818'
+05:15 INFO    : Using lal version 7.7.0
+05:15 INFO    : Using lal git version Branch: None;Tag: lalsuite-v7.26.1;Id: c90e1175f5e238741185744a4e516e58d42a9aec;;Builder: Unknown User <>;Repository status: CLEAN: All modifications committed
+05:15 INFO    : Using lalsimulation version 6.2.0
+05:15 INFO    : Using lalsimulation git version Branch: None;Tag: lalsuite-v7.26.1;Id: c90e1175f5e238741185744a4e516e58d42a9aec;;Builder: Unknown User <>;Repository status: CLEAN: All modifications committed
+05:16 INFO    : Analysis priors:
+05:16 INFO    : chirp_mass=bilby.gw.prior.UniformInComponentsChirpMass(minimum=1, maximum=130, name='chirp_mass', latex_label='$\\mathcal{M}$', unit='$M_{\\odot}$', boundary=None)
+05:16 INFO    : mass_ratio=bilby.gw.prior.UniformInComponentsMassRatio(minimum=0.125, maximum=1, name='mass_ratio', latex_label='$q$', unit=None, boundary=None, equal_mass=False)
+05:16 INFO    : a_1=Uniform(minimum=0, maximum=0.99, name='a_1', latex_label='$a_1$', unit=None, boundary=None)
+05:16 INFO    : a_2=Uniform(minimum=0, maximum=0.99, name='a_2', latex_label='$a_2$', unit=None, boundary=None)
+05:16 INFO    : tilt_1=Sine(minimum=0, maximum=3.141592653589793, name='tilt_1', latex_label='$\\theta_1$', unit=None, boundary=None)
+05:16 INFO    : tilt_2=Sine(minimum=0, maximum=3.141592653589793, name='tilt_2', latex_label='$\\theta_2$', unit=None, boundary=None)
+05:16 INFO    : phi_12=Uniform(minimum=0, maximum=6.283185307179586, name='phi_12', latex_label='$\\Delta\\phi$', unit=None, boundary='periodic')
+05:16 INFO    : phi_jl=Uniform(minimum=0, maximum=6.283185307179586, name='phi_jl', latex_label='$\\phi_{JL}$', unit=None, boundary='periodic')
+05:16 INFO    : dec=Cosine(minimum=-1.5707963267948966, maximum=1.5707963267948966, name='dec', latex_label='$\\mathrm{DEC}$', unit=None, boundary=None)
+05:16 INFO    : ra=Uniform(minimum=0, maximum=6.283185307179586, name='ra', latex_label='$\\mathrm{RA}$', unit=None, boundary='periodic')
+05:16 INFO    : theta_jn=Sine(minimum=0, maximum=3.141592653589793, name='theta_jn', latex_label='$\\theta_{JN}$', unit=None, boundary=None)
+05:16 INFO    : psi=Uniform(minimum=0, maximum=3.141592653589793, name='psi', latex_label='$\\psi$', unit=None, boundary='periodic')
+05:16 INFO    : phase=Uniform(minimum=0, maximum=6.283185307179586, name='phase', latex_label='$\\phi$', unit=None, boundary='periodic')
+05:16 INFO    : geocent_time=Uniform(minimum=1187058327.0, maximum=1187058327.1999998, name='geocent_time', latex_label='$t_c$', unit=None, boundary=None)
+05:16 INFO    : mass_1=Constraint(minimum=1, maximum=150, name='mass_1', latex_label='$m_1$', unit=None)
+05:16 INFO    : mass_2=Constraint(minimum=1, maximum=150, name='mass_2', latex_label='$m_2$', unit=None)
+05:16 INFO    : luminosity_distance=11905.507890937342
+05:16 INFO    : Analysis likelihood class: <class 'bilby.gw.likelihood.base.GravitationalWaveTransient'>
+05:16 INFO    : Analysis likelihood noise evidence: -6929.342728071275
+05:16 INFO    : Single likelihood evaluation took 2.295e-03 s
+05:16 INFO    : Using sampler Dynesty with kwargs {'nlive': 2000, 'bound': 'live', 'sample': 'acceptance-walk', 'periodic': None, 'reflective': None, 'update_interval': 600, 'first_update': None, 'rstate': None, 'queue_size': 48, 'pool': None, 'use_pool': None, 'live_points': None, 'logl_args': None, 'logl_kwargs': None, 'ptform_args': None, 'ptform_kwargs': None, 'enlarge': None, 'bootstrap': None, 'walks': 100, 'facc': 0.2, 'slices': None, 'ncdim': None, 'blob': False, 'save_evaluation_history': False, 'history_filename': None, 'maxiter': None, 'maxcall': None, 'dlogz': 0.1, 'logl_max': inf, 'add_live': True, 'print_progress': True, 'print_func': <bound method Dynesty._print_func of <bilby.core.sampler.dynesty.Dynesty object at 0x7ffeac60cd50>>, 'save_bounds': False, 'checkpoint_file': None, 'checkpoint_every': 60, 'resume': False, 'seed': None}
+05:16 INFO    : Global meta data was removed from the result object for compatibility. Use the `BILBY_INCLUDE_GLOBAL_METADATA` environment variable to include it. This behaviour will be removed in a future release. For more details see: https://bilby-dev.github.io/bilby/faq.html#global-meta-data
+05:16 INFO    : Checkpoint every check_point_delta_t = 600s
+05:16 INFO    : Using dynesty version 3.0.0
+05:16 INFO    : Setting up multiproccesing pool with 48 processes
+05:16 INFO    : Resume file GWTC-1-confident_marg2/outdir_GW170818/GW170818_resume.pickle does not exist.
+05:16 INFO    : Generating initial points from the prior
+05:16 INFO    : Using the bilby-implemented ensemble rwalk sampling method with an average of 60 accepted steps up to chain length 5000.
+05:26 INFO    : Written checkpoint file GWTC-1-confident_marg2/outdir_GW170818/GW170818_resume.pickle
+05:37 INFO    : Written checkpoint file GWTC-1-confident_marg2/outdir_GW170818/GW170818_resume.pickle
+05:48 INFO    : Written checkpoint file GWTC-1-confident_marg2/outdir_GW170818/GW170818_resume.pickle
+05:59 INFO    : Written checkpoint file GWTC-1-confident_marg2/outdir_GW170818/GW170818_resume.pickle
+06:10 INFO    : Written checkpoint file GWTC-1-confident_marg2/outdir_GW170818/GW170818_resume.pickle
+06:20 INFO    : Written checkpoint file GWTC-1-confident_marg2/outdir_GW170818/GW170818_resume.pickle
+06:31 INFO    : Written checkpoint file GWTC-1-confident_marg2/outdir_GW170818/GW170818_resume.pickle
+06:43 INFO    : Written checkpoint file GWTC-1-confident_marg2/outdir_GW170818/GW170818_resume.pickle
+06:54 INFO    : Written checkpoint file GWTC-1-confident_marg2/outdir_GW170818/GW170818_resume.pickle
+06:56 INFO    : Written checkpoint file GWTC-1-confident_marg2/outdir_GW170818/GW170818_resume.pickle
+06:56 INFO    : Starting to close worker pool.
+06:56 INFO    : Finished closing worker pool.
+06:56 INFO    : Rejection sampling nested samples to obtain 11031 posterior samples
+06:56 INFO    : Sampling time: 1:40:18.582253
+06:56 WARNING : Result.save_to_file called with extension=True. This will default to json, and ignore the extension from the filename. This behaviour is deprecated and will be removed. 
+06:56 INFO    : Computing per-detector log likelihoods.
+06:56 INFO    : Using a pool with size 48 for nsamples=11031
+06:56 INFO    : Reconstructing marginalised parameters.
+06:56 INFO    : Using a pool with size 48 for nsamples=11031
+06:57 INFO    : Computing SNRs for every sample.
+06:57 INFO    : Using a pool with size 48 for nsamples=11031
+06:57 WARNING : Result.save_to_file called with extension=True. This will default to json, and ignore the extension from the filename. This behaviour is deprecated and will be removed. 
+06:57 INFO    : Summary of results:
+nsamples: 11031
+ln_noise_evidence: -6929.343
+ln_evidence: -6891.848 +/-  0.131
+ln_bayes_factor: 37.495 +/-  0.131
+
+06:57 INFO    : Starting GW170823
+06:57 INFO    : Downloading analysis data for ifo H1
+06:57 INFO    : Downloading psd data for ifo H1
+07:00 INFO    : Downloading analysis data for ifo L1
+07:00 INFO    : Downloading psd data for ifo L1
+07:00 INFO    : Downloading analysis data for ifo V1
+07:01 INFO    : Downloading psd data for ifo V1
+07:02 INFO    : psd data contains NaN, reducing psd length
+07:02 INFO    : Downloading psd data for ifo V1
+07:02 INFO    : psd data contains NaN, reducing psd length
+07:02 INFO    : Downloading psd data for ifo V1
+07:03 INFO    : psd data contains NaN, reducing psd length
+07:03 INFO    : Downloading psd data for ifo V1
+07:03 INFO    : psd data contains NaN, reducing psd length
+07:03 INFO    : Downloading psd data for ifo V1
+07:03 INFO    : psd data contains NaN, reducing psd length
+07:03 INFO    : Downloading psd data for ifo V1
+07:04 INFO    : psd data contains NaN, reducing psd length
+07:04 INFO    : Downloading psd data for ifo V1
+07:04 INFO    : psd data contains NaN, reducing psd length
+07:04 INFO    : Downloading psd data for ifo V1
+07:04 INFO    : psd data contains NaN, reducing psd length
+07:04 INFO    : Downloading psd data for ifo V1
+07:05 INFO    : psd data contains NaN, reducing psd length
+07:05 INFO    : Downloading psd data for ifo V1
+07:05 INFO    : psd data contains NaN, reducing psd length
+07:05 INFO    : Downloading psd data for ifo V1
+07:05 INFO    : psd data contains NaN, reducing psd length
+07:05 INFO    : Downloading psd data for ifo V1
+07:06 INFO    : psd data contains NaN, reducing psd length
+07:06 INFO    : Downloading psd data for ifo V1
+07:06 INFO    : psd data contains NaN, reducing psd length
+07:06 INFO    : Downloading psd data for ifo V1
+07:06 INFO    : psd data contains NaN, reducing psd length
+07:06 INFO    : Downloading psd data for ifo V1
+07:07 INFO    : psd data contains NaN, reducing psd length
+07:07 INFO    : Downloading psd data for ifo V1
+07:07 INFO    : psd data contains NaN, reducing psd length
+07:07 INFO    : Downloading psd data for ifo V1
+07:07 INFO    : psd data contains NaN, reducing psd length
+07:07 INFO    : Downloading psd data for ifo V1
+07:08 INFO    : psd data contains NaN, reducing psd length
+07:08 INFO    : Downloading psd data for ifo V1
+07:08 INFO    : psd data contains NaN, reducing psd length
+07:08 INFO    : Downloading psd data for ifo V1
+07:08 INFO    : psd data contains NaN, reducing psd length
+07:08 INFO    : Downloading psd data for ifo V1
+07:09 INFO    : psd data contains NaN, reducing psd length
+07:09 INFO    : Downloading psd data for ifo V1
+07:09 INFO    : psd data contains NaN, reducing psd length
+07:09 INFO    : Downloading psd data for ifo V1
+07:10 INFO    : psd data contains NaN, reducing psd length
+07:10 INFO    : Downloading psd data for ifo V1
+07:10 INFO    : psd data contains NaN, reducing psd length
+07:10 INFO    : Downloading psd data for ifo V1
+07:10 INFO    : psd data contains NaN, reducing psd length
+07:10 INFO    : Downloading psd data for ifo V1
+07:11 INFO    : psd data contains NaN, reducing psd length
+07:11 INFO    : Downloading psd data for ifo V1
+07:11 INFO    : psd data contains NaN, reducing psd length
+07:11 INFO    : Downloading psd data for ifo V1
+07:12 INFO    : psd data contains NaN, reducing psd length
+07:12 INFO    : Downloading psd data for ifo V1
+07:12 INFO    : psd data contains NaN, reducing psd length
+07:12 INFO    : Downloading psd data for ifo V1
+07:13 INFO    : psd data contains NaN, reducing psd length
+07:13 INFO    : Downloading psd data for ifo V1
+07:13 INFO    : psd data contains NaN, reducing psd length
+07:13 INFO    : Downloading psd data for ifo V1
+07:17 INFO    : psd data contains NaN, reducing psd length
+07:17 INFO    : Downloading psd data for ifo V1
+07:19 INFO    : psd data contains NaN, reducing psd length
+07:19 INFO    : Downloading psd data for ifo V1
+07:19 INFO    : psd data contains NaN, reducing psd length
+07:19 INFO    : Downloading psd data for ifo V1
+07:20 INFO    : psd data contains NaN, reducing psd length
+07:20 INFO    : Downloading psd data for ifo V1
+07:21 INFO    : psd data contains NaN, reducing psd length
+07:21 INFO    : Downloading psd data for ifo V1
+07:21 INFO    : psd data contains NaN, reducing psd length
+07:21 INFO    : Downloading psd data for ifo V1
+07:21 INFO    : psd data contains NaN, reducing psd length
+07:21 INFO    : Downloading psd data for ifo V1
+07:22 INFO    : psd data contains NaN, reducing psd length
+07:22 INFO    : Downloading psd data for ifo V1
+07:22 INFO    : psd data contains NaN, reducing psd length
+07:22 INFO    : Downloading psd data for ifo V1
+07:22 INFO    : psd data contains NaN, reducing psd length
+07:22 INFO    : Downloading psd data for ifo V1
+07:23 INFO    : psd data contains NaN, reducing psd length
+07:23 INFO    : Downloading psd data for ifo V1
+07:23 INFO    : psd data contains NaN, reducing psd length
+07:23 INFO    : Downloading psd data for ifo V1
+07:23 INFO    : psd data contains NaN, reducing psd length
+07:23 INFO    : Downloading psd data for ifo V1
+07:24 INFO    : psd data contains NaN, reducing psd length
+07:24 INFO    : Downloading psd data for ifo V1
+07:24 INFO    : psd data contains NaN, reducing psd length
+07:24 INFO    : Downloading psd data for ifo V1
+07:24 INFO    : psd data contains NaN, reducing psd length
+07:24 INFO    : Downloading psd data for ifo V1
+07:24 INFO    : psd data contains NaN, reducing psd length
+07:24 INFO    : Downloading psd data for ifo V1
+07:24 INFO    : psd data contains NaN, reducing psd length
+07:24 INFO    : Downloading psd data for ifo V1
+07:24 INFO    : psd data contains NaN, reducing psd length
+07:24 INFO    : Downloading psd data for ifo V1
+07:25 INFO    : psd data contains NaN, reducing psd length
+07:25 INFO    : Downloading psd data for ifo V1
+07:25 INFO    : psd data contains NaN, reducing psd length
+07:25 INFO    : Downloading psd data for ifo V1
+07:26 INFO    : psd data contains NaN, reducing psd length
+07:26 INFO    : Downloading psd data for ifo V1
+07:29 INFO    : psd data contains NaN, reducing psd length
+07:29 INFO    : Downloading psd data for ifo V1
+07:32 INFO    : psd data contains NaN, reducing psd length
+07:32 INFO    : Downloading psd data for ifo V1
+07:33 INFO    : psd data contains NaN, reducing psd length
+07:33 INFO    : Downloading psd data for ifo V1
+07:34 INFO    : psd data contains NaN, reducing psd length
+07:34 INFO    : Downloading psd data for ifo V1
+07:35 INFO    : psd data contains NaN, reducing psd length
+07:35 INFO    : Downloading psd data for ifo V1
+07:35 INFO    : psd data contains NaN, reducing psd length
+07:35 INFO    : Downloading psd data for ifo V1
+07:36 INFO    : psd data contains NaN, reducing psd length
+07:36 INFO    : Downloading psd data for ifo V1
+07:36 INFO    : psd data contains NaN, reducing psd length
+07:36 INFO    : Downloading psd data for ifo V1
+07:36 INFO    : psd data contains NaN, reducing psd length
+07:36 INFO    : Downloading psd data for ifo V1
+07:37 INFO    : psd data contains NaN, reducing psd length
+07:37 INFO    : Downloading psd data for ifo V1
+07:37 INFO    : psd data contains NaN, reducing psd length
+07:37 INFO    : Downloading psd data for ifo V1
+07:37 INFO    : psd data contains NaN, reducing psd length
+07:37 INFO    : Downloading psd data for ifo V1
+07:37 INFO    : psd data contains NaN, reducing psd length
+07:37 INFO    : Downloading psd data for ifo V1
+07:37 INFO    : psd data contains NaN, reducing psd length
+07:37 INFO    : Downloading psd data for ifo V1
+07:38 INFO    : psd data contains NaN, reducing psd length
+07:38 INFO    : Downloading psd data for ifo V1
+07:40 INFO    : psd data contains NaN, reducing psd length
+07:40 INFO    : Downloading psd data for ifo V1
+07:43 INFO    : psd data contains NaN, reducing psd length
+07:43 INFO    : Downloading psd data for ifo V1
+07:44 INFO    : psd data contains NaN, reducing psd length
+07:44 INFO    : Downloading psd data for ifo V1
+07:44 INFO    : psd data contains NaN, reducing psd length
+07:44 INFO    : Downloading psd data for ifo V1
+07:45 INFO    : psd data contains NaN, reducing psd length
+07:45 INFO    : Downloading psd data for ifo V1
+07:45 INFO    : psd data contains NaN, reducing psd length
+07:45 INFO    : Downloading psd data for ifo V1
+07:46 INFO    : psd data contains NaN, reducing psd length
+07:46 INFO    : Downloading psd data for ifo V1
+07:46 INFO    : psd data contains NaN, reducing psd length
+07:46 INFO    : Downloading psd data for ifo V1
+07:46 INFO    : psd data contains NaN, reducing psd length
+07:46 INFO    : Downloading psd data for ifo V1
+07:47 INFO    : psd data contains NaN, reducing psd length
+07:47 INFO    : Downloading psd data for ifo V1
+07:47 INFO    : psd data contains NaN, reducing psd length
+07:47 INFO    : Downloading psd data for ifo V1
+07:47 INFO    : psd data contains NaN, reducing psd length
+07:47 INFO    : Downloading psd data for ifo V1
+07:47 INFO    : psd data contains NaN, reducing psd length
+07:47 INFO    : Downloading psd data for ifo V1
+07:48 INFO    : psd data contains NaN, reducing psd length
+07:48 INFO    : Downloading psd data for ifo V1
+07:48 INFO    : psd data contains NaN, reducing psd length
+07:48 INFO    : Downloading psd data for ifo V1
+07:49 INFO    : psd data contains NaN, reducing psd length
+07:49 INFO    : Downloading psd data for ifo V1
+07:49 INFO    : psd data contains NaN, reducing psd length
+07:49 INFO    : Downloading psd data for ifo V1
+07:49 INFO    : psd data contains NaN, reducing psd length
+07:49 INFO    : Downloading psd data for ifo V1
+07:50 INFO    : psd data contains NaN, reducing psd length
+07:50 INFO    : Downloading psd data for ifo V1
+07:51 INFO    : psd data contains NaN, reducing psd length
+07:51 INFO    : Downloading psd data for ifo V1
+07:54 INFO    : psd data contains NaN, reducing psd length
+07:54 INFO    : Downloading psd data for ifo V1
+07:56 INFO    : psd data contains NaN, reducing psd length
+07:56 INFO    : Downloading psd data for ifo V1
+07:56 INFO    : psd data contains NaN, reducing psd length
+07:56 INFO    : Downloading psd data for ifo V1
+07:57 INFO    : psd data contains NaN, reducing psd length
+07:57 INFO    : Downloading psd data for ifo V1
+07:58 INFO    : psd data contains NaN, reducing psd length
+07:58 INFO    : Downloading psd data for ifo V1
+07:58 INFO    : psd data contains NaN, reducing psd length
+07:58 INFO    : Downloading psd data for ifo V1
+07:58 INFO    : psd data contains NaN, reducing psd length
+07:58 INFO    : Downloading psd data for ifo V1
+07:59 INFO    : psd data contains NaN, reducing psd length
+07:59 INFO    : Downloading psd data for ifo V1
+07:59 INFO    : psd data contains NaN, reducing psd length
+07:59 INFO    : Downloading psd data for ifo V1
+07:59 INFO    : psd data contains NaN, reducing psd length
+07:59 INFO    : Downloading psd data for ifo V1
+08:00 INFO    : psd data contains NaN, reducing psd length
+08:00 INFO    : Downloading psd data for ifo V1
+08:00 INFO    : psd data contains NaN, reducing psd length
+08:00 INFO    : Downloading psd data for ifo V1
+08:00 INFO    : psd data contains NaN, reducing psd length
+08:00 INFO    : Downloading psd data for ifo V1
+08:01 INFO    : psd data contains NaN, reducing psd length
+08:01 INFO    : Downloading psd data for ifo V1
+08:02 INFO    : psd data contains NaN, reducing psd length
+08:02 INFO    : Downloading psd data for ifo V1
+08:02 INFO    : psd data contains NaN, reducing psd length
+08:02 INFO    : Downloading psd data for ifo V1
+08:04 INFO    : psd data contains NaN, reducing psd length
+08:04 INFO    : Downloading psd data for ifo V1
+08:07 INFO    : psd data contains NaN, reducing psd length
+08:07 INFO    : Downloading psd data for ifo V1
+08:09 INFO    : psd data contains NaN, reducing psd length
+08:09 INFO    : Downloading psd data for ifo V1
+08:10 INFO    : psd data contains NaN, reducing psd length
+08:10 INFO    : Downloading psd data for ifo V1
+08:10 INFO    : psd data contains NaN, reducing psd length
+08:10 INFO    : Downloading psd data for ifo V1
+08:11 INFO    : psd data contains NaN, reducing psd length
+08:11 INFO    : Downloading psd data for ifo V1
+08:11 INFO    : psd data contains NaN, reducing psd length
+08:11 INFO    : Downloading psd data for ifo V1
+08:12 INFO    : psd data contains NaN, reducing psd length
+08:12 INFO    : Downloading psd data for ifo V1
+08:13 INFO    : psd data contains NaN, reducing psd length
+08:13 INFO    : Downloading psd data for ifo V1
+08:15 INFO    : psd data contains NaN, reducing psd length
+08:15 INFO    : Downloading psd data for ifo V1
+08:15 INFO    : psd data contains NaN, reducing psd length
+08:15 INFO    : Downloading psd data for ifo V1
+08:15 INFO    : psd data contains NaN, reducing psd length
+08:15 INFO    : Downloading psd data for ifo V1
+08:16 INFO    : psd data contains NaN, reducing psd length
+08:16 INFO    : Downloading psd data for ifo V1
+08:16 INFO    : psd data contains NaN, reducing psd length
+08:16 INFO    : Downloading psd data for ifo V1
+08:17 INFO    : psd data contains NaN, reducing psd length
+08:17 INFO    : Downloading psd data for ifo V1
+08:17 INFO    : psd data contains NaN, reducing psd length
+08:17 INFO    : Downloading psd data for ifo V1
+08:18 INFO    : psd data contains NaN, reducing psd length
+08:18 INFO    : Downloading psd data for ifo V1
+08:18 INFO    : psd data contains NaN, reducing psd length
+08:18 INFO    : Downloading psd data for ifo V1
+08:19 INFO    : psd data contains NaN, reducing psd length
+08:19 INFO    : Downloading psd data for ifo V1
+08:19 INFO    : psd data contains NaN, reducing psd length
+08:19 INFO    : Downloading psd data for ifo V1
+08:19 INFO    : psd data contains NaN, reducing psd length
+08:19 INFO    : Downloading psd data for ifo V1
+08:20 WARNING : Unable to get required data for ifo V1
+08:20 INFO    : Saving data plots to GWTC-1-confident_marg2/outdir_GW170823
+08:20 INFO    : Waveform generator instantiated: WaveformGenerator(duration=None, sampling_frequency=None, start_time=0, frequency_domain_source_model=bilby.gw.source.lal_binary_black_hole, time_domain_source_model=None, parameter_conversion=bilby.gw.conversion.convert_to_lal_binary_black_hole_parameters, waveform_arguments={'waveform_approximant': 'IMRPhenomPv2', 'reference_frequency': 50})
+08:20 INFO    : Loaded distance marginalisation lookup table from .distance_marginalization_lookup.npz.
+08:20 INFO    : Running for label 'GW170823', output will be saved to 'GWTC-1-confident_marg2/outdir_GW170823'
+08:20 INFO    : Using lal version 7.7.0
+08:20 INFO    : Using lal git version Branch: None;Tag: lalsuite-v7.26.1;Id: c90e1175f5e238741185744a4e516e58d42a9aec;;Builder: Unknown User <>;Repository status: CLEAN: All modifications committed
+08:20 INFO    : Using lalsimulation version 6.2.0
+08:20 INFO    : Using lalsimulation git version Branch: None;Tag: lalsuite-v7.26.1;Id: c90e1175f5e238741185744a4e516e58d42a9aec;;Builder: Unknown User <>;Repository status: CLEAN: All modifications committed
+08:21 INFO    : Analysis priors:
+08:21 INFO    : chirp_mass=bilby.gw.prior.UniformInComponentsChirpMass(minimum=1, maximum=130, name='chirp_mass', latex_label='$\\mathcal{M}$', unit='$M_{\\odot}$', boundary=None)
+08:21 INFO    : mass_ratio=bilby.gw.prior.UniformInComponentsMassRatio(minimum=0.125, maximum=1, name='mass_ratio', latex_label='$q$', unit=None, boundary=None, equal_mass=False)
+08:21 INFO    : a_1=Uniform(minimum=0, maximum=0.99, name='a_1', latex_label='$a_1$', unit=None, boundary=None)
+08:21 INFO    : a_2=Uniform(minimum=0, maximum=0.99, name='a_2', latex_label='$a_2$', unit=None, boundary=None)
+08:21 INFO    : tilt_1=Sine(minimum=0, maximum=3.141592653589793, name='tilt_1', latex_label='$\\theta_1$', unit=None, boundary=None)
+08:21 INFO    : tilt_2=Sine(minimum=0, maximum=3.141592653589793, name='tilt_2', latex_label='$\\theta_2$', unit=None, boundary=None)
+08:21 INFO    : phi_12=Uniform(minimum=0, maximum=6.283185307179586, name='phi_12', latex_label='$\\Delta\\phi$', unit=None, boundary='periodic')
+08:21 INFO    : phi_jl=Uniform(minimum=0, maximum=6.283185307179586, name='phi_jl', latex_label='$\\phi_{JL}$', unit=None, boundary='periodic')
+08:21 INFO    : dec=Cosine(minimum=-1.5707963267948966, maximum=1.5707963267948966, name='dec', latex_label='$\\mathrm{DEC}$', unit=None, boundary=None)
+08:21 INFO    : ra=Uniform(minimum=0, maximum=6.283185307179586, name='ra', latex_label='$\\mathrm{RA}$', unit=None, boundary='periodic')
+08:21 INFO    : theta_jn=Sine(minimum=0, maximum=3.141592653589793, name='theta_jn', latex_label='$\\theta_{JN}$', unit=None, boundary=None)
+08:21 INFO    : psi=Uniform(minimum=0, maximum=3.141592653589793, name='psi', latex_label='$\\psi$', unit=None, boundary='periodic')
+08:21 INFO    : phase=Uniform(minimum=0, maximum=6.283185307179586, name='phase', latex_label='$\\phi$', unit=None, boundary='periodic')
+08:21 INFO    : geocent_time=Uniform(minimum=1187529256.4, maximum=1187529256.6, name='geocent_time', latex_label='$t_c$', unit=None, boundary=None)
+08:21 INFO    : mass_1=Constraint(minimum=1, maximum=150, name='mass_1', latex_label='$m_1$', unit=None)
+08:21 INFO    : mass_2=Constraint(minimum=1, maximum=150, name='mass_2', latex_label='$m_2$', unit=None)
+08:21 INFO    : luminosity_distance=11905.507890937342
+08:21 INFO    : Analysis likelihood class: <class 'bilby.gw.likelihood.base.GravitationalWaveTransient'>
+08:21 INFO    : Analysis likelihood noise evidence: -4332.857326879088
+08:21 INFO    : Single likelihood evaluation took 3.076e-02 s
+08:21 INFO    : Using sampler Dynesty with kwargs {'nlive': 2000, 'bound': 'live', 'sample': 'acceptance-walk', 'periodic': None, 'reflective': None, 'update_interval': 600, 'first_update': None, 'rstate': None, 'queue_size': 48, 'pool': None, 'use_pool': None, 'live_points': None, 'logl_args': None, 'logl_kwargs': None, 'ptform_args': None, 'ptform_kwargs': None, 'enlarge': None, 'bootstrap': None, 'walks': 100, 'facc': 0.2, 'slices': None, 'ncdim': None, 'blob': False, 'save_evaluation_history': False, 'history_filename': None, 'maxiter': None, 'maxcall': None, 'dlogz': 0.1, 'logl_max': inf, 'add_live': True, 'print_progress': True, 'print_func': <bound method Dynesty._print_func of <bilby.core.sampler.dynesty.Dynesty object at 0x7ffebb4c6ed0>>, 'save_bounds': False, 'checkpoint_file': None, 'checkpoint_every': 60, 'resume': False, 'seed': None}
+08:21 INFO    : Global meta data was removed from the result object for compatibility. Use the `BILBY_INCLUDE_GLOBAL_METADATA` environment variable to include it. This behaviour will be removed in a future release. For more details see: https://bilby-dev.github.io/bilby/faq.html#global-meta-data
+08:21 INFO    : Checkpoint every check_point_delta_t = 600s
+08:21 INFO    : Using dynesty version 3.0.0
+08:21 INFO    : Setting up multiproccesing pool with 48 processes
+08:21 INFO    : Resume file GWTC-1-confident_marg2/outdir_GW170823/GW170823_resume.pickle does not exist.
+08:21 INFO    : Generating initial points from the prior
+08:21 INFO    : Using the bilby-implemented ensemble rwalk sampling method with an average of 60 accepted steps up to chain length 5000.
+08:31 INFO    : Written checkpoint file GWTC-1-confident_marg2/outdir_GW170823/GW170823_resume.pickle
+08:42 INFO    : Written checkpoint file GWTC-1-confident_marg2/outdir_GW170823/GW170823_resume.pickle
+08:53 INFO    : Written checkpoint file GWTC-1-confident_marg2/outdir_GW170823/GW170823_resume.pickle
+09:04 INFO    : Written checkpoint file GWTC-1-confident_marg2/outdir_GW170823/GW170823_resume.pickle
+09:14 INFO    : Written checkpoint file GWTC-1-confident_marg2/outdir_GW170823/GW170823_resume.pickle
+09:14 INFO    : Starting to close worker pool.
+09:14 INFO    : Finished closing worker pool.
+09:14 INFO    : Rejection sampling nested samples to obtain 9864 posterior samples
+09:14 INFO    : Sampling time: 0:53:03.285852
+09:14 WARNING : Result.save_to_file called with extension=True. This will default to json, and ignore the extension from the filename. This behaviour is deprecated and will be removed. 
+09:14 INFO    : Computing per-detector log likelihoods.
+09:14 INFO    : Using a pool with size 48 for nsamples=9864
+09:14 INFO    : Reconstructing marginalised parameters.
+09:14 INFO    : Using a pool with size 48 for nsamples=9864
+09:15 INFO    : Computing SNRs for every sample.
+09:15 INFO    : Using a pool with size 48 for nsamples=9864
+09:15 WARNING : Result.save_to_file called with extension=True. This will default to json, and ignore the extension from the filename. This behaviour is deprecated and will be removed. 
+09:15 INFO    : Summary of results:
+nsamples: 9864
+ln_noise_evidence: -4332.857
+ln_evidence: -4282.115 +/-  0.115
+ln_bayes_factor: 50.743 +/-  0.115
+
