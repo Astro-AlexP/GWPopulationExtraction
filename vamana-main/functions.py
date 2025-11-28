@@ -1,12 +1,10 @@
-import os, sys, copy, h5py
+import h5py
 
-import numpy as np
 import scipy.stats as ss
 from scipy.special import logsumexp
-from scipy.interpolate import interp1d
 
-from multiprocessing import Pool, cpu_count
-from scipy.stats import norm, chi2
+from multiprocessing import Pool
+from scipy.stats import chi2
 
 import gnobs
 from models import *

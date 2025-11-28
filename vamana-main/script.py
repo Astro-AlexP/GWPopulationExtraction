@@ -2,12 +2,10 @@
 # -*- coding: utf-8 -*-
 
 import glob, sys, os
-import numpy as np
-import h5py
 
 from conversions import *
-import gnobs, models, functions
-import read_pe_samples, read_pe_samples_o4, read_data
+import functions
+import read_pe_samples
 import post_process
 
 sys.path.append("analysis/")
@@ -15,13 +13,13 @@ sys.path.append("analysis/")
 case = 1
 
 pe_dir, inj_file = {}, {}
-pe_dir['o1o2'] = './gw_data/pe/*o1o2*BBH*.hdf5'
-pe_dir['o3a'] = './gw_data/pe/*o3a*BBH*.hdf5'
-pe_dir['o3b'] = './gw_data/pe/*o3b*BBH*.hdf5'
+pe_dir['o1o2'] = './gw_data/pe/*.hdf5'
+#pe_dir['o3a'] = './gw_data/pe/*o3a*BBH*.hdf5'
+#pe_dir['o3b'] = './gw_data/pe/*o3b*BBH*.hdf5'
 
 inj_file['o1o2'] = './gw_data/injections/o1+o2-bbh-IMRPhenomXPHMpseudoFourPN.hdf5'
-inj_file['o3a'] = './gw_data/injections/endo3_bbhpop-LIGO-T2100113-v9-1238166018-15843600.hdf5'
-inj_file['o3b'] = './gw_data/injections/endo3_bbhpop-LIGO-T2100113-v9-1256655642-12905976.hdf5'
+#inj_file['o3a'] = './gw_data/injections/endo3_bbhpop-LIGO-T2100113-v9-1238166018-15843600.hdf5'
+#inj_file['o3b'] = './gw_data/injections/endo3_bbhpop-LIGO-T2100113-v9-1256655642-12905976.hdf5'
 
 nsamp = 3000
 def read_data_o1o2(obsruns, ifar_thr):
@@ -41,7 +39,7 @@ if case == 1:
     
 analysis_name = analysis.__name__
 if 'o3' in analysis_name or 'o4a' in analysis_name or 'o4b' in analysis_name:
-    pe, injections = read_data_o1o2(['o1o2', 'o3a', 'o3b'], 1.0)
+    pe, injections = read_data_o1o2(['o1o2'], 1.0)
 
 data_analysis = {}
 data_analysis['pe'] = pe

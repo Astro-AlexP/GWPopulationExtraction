@@ -1,5 +1,3 @@
-import numpy as np
-import models, gnobs
 from conversions import *
             
 def get_data_for_fitting(pe, inj):
