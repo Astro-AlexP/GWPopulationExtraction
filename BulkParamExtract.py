@@ -15,8 +15,14 @@ events = find_datasets(type='event', catalog=catalog)
 
 screened_events = []
 
+nsEvents = ["GW170817", "GW190425", "GW200105", "GW200115", "GW230529"]
+
 for event in events:
-    if event[:-3] != "GW170817":
+    neutron = False
+    for ns in nsEvents:
+        if event[:-3] == ns:
+            neutron == True
+    if not neutron:
         screened_events.append(event)
 
 events = screened_events
