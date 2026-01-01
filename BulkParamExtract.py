@@ -9,7 +9,7 @@ import os.path
 # , 'GWTC-2.1-confident', 'GWTC-2.1-marginal', 'GWTC-3-confident', 'GWTC-3-marginal', 'GWTC-4.0', 'IAS-O3a', 'Initial_LIGO_Virgo'
 # , 'O1_O2-Preliminary', 'O3_Discovery_Papers', 'O3_IMBH_marginal', 'O4_Discovery_Papers']
 
-catalog = 'GWTC-1-confident'
+catalog = 'GWTC-2.1-confident'
 
 events = find_datasets(type='event', catalog=catalog)
 
@@ -20,7 +20,7 @@ nsEvents = ["GW170817", "GW190425", "GW200105", "GW200115", "GW230529"]
 for event in events:
     neutron = False
     for ns in nsEvents:
-        if event[:-3] == ns:
+        if event[0:8] == ns:
             neutron == True
     if not neutron:
         screened_events.append(event)
@@ -28,7 +28,7 @@ for event in events:
 events = screened_events
 
 for event in events:
-    label = event[:-3]
+    label = event[0:-3]
     outdir = "Data/outdir_" + label
 
     if not os.path.exists(outdir + "/" + label + "_result.json"):
@@ -38,8 +38,11 @@ for event in events:
 
         logger.info("Starting {}".format(label))
 
-        trigger_time = datasets.event_gps(label)
-        detectors = datasets.event_detectors(label)
+        trigger_time = datasets.event_gps(event)
+        detectors = datasets.event_detectors(event)
+        if len(detectors) == 0:
+            tempEvent = event[:-1] + str(int(event[-1]) - 1)
+            detectors = datasets.event_detectors(tempEvent)
         maximum_frequency = 512
         minimum_frequency = 20
         roll_off = 0.4  # Roll off duration of tukey window in seconds, default is 0.4s
