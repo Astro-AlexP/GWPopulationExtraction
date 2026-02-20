@@ -50,7 +50,7 @@ args_sampler, args_ppd = analysis.define_args(pe, injections)
 output = args_ppd['output']
 
 print (analysis_name)
-fout = 'results/' + analysis_name + '_ng' + str(args_sampler['ngauss']) +'.hdf5'
+fout = 'results/' + 'o4_mixed' + '_ng' + str(args_sampler['ngauss']) +'.hdf5'
 files = np.sort(glob.glob(output + '/*_' + analysis_name + '_*.hdf5'))
 try:
     flen = np.array([len(fn.split('_')) for fn in files])

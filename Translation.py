@@ -2,6 +2,7 @@ import bilby
 import numpy as np
 import pandas as pd
 import glob
+import re
 
 resultPath = "./Bilby_Data/*/*_result.json"
 
@@ -12,8 +13,9 @@ for file in pe_files:
 
     posterior_df = pd.DataFrame(result.posterior)
 
-    event = file[20:28]
+    event = re.findall("GW......_......", file)[0]
 
+    print(event)
     for i, col in enumerate(posterior_df.columns):
         if i == 0:
             posterior_df[col].to_hdf("Data/" + event + "_data.hdf5", key=col, mode='w')
